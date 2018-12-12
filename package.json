@@ -10,7 +10,6 @@
   "license": "MIT",
   "devDependencies": {
     "chai": "^4.2.0",
-    "istanbul": "^0.4.5",
     "mocha": "^5.2.0"
   }
 }
