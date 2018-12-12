@@ -1,0 +1,15 @@
+{
+  "name": "dfs-rule-engine",
+  "version": "1.0.0",
+  "description": "Rule Engine Based on DFS",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha $NODE_DEBUG_OPTION --timeout 10000"
+  },
+  "author": "Nahiyan Kamal",
+  "license": "MIT",
+  "devDependencies": {
+    "mocha": "^5.2.0",
+    "chai": "^4.2.0"
+  }
+}
