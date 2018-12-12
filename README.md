@@ -5,4 +5,4 @@
 [![dependencies Status](https://david-dm.org/ayonious/dfs-rule-engine/status.svg)](https://david-dm.org/ayonious/dfs-rule-engine)
 [![devDependencies Status](https://david-dm.org/ayonious/dfs-rule-engine/dev-status.svg)](https://david-dm.org/ayonious/dfs-rule-engine?type=dev)
 
-A rule engine that has order of rules and nested rules
+A rule engine that has order of rules and nested rules 
