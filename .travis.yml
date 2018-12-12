@@ -2,7 +2,7 @@ language: node_js
 node_js:
   - "10"
 install:
-  - npm install -g codecov
+  - npm install -g codecov nyc
 script:
   - npm run test
   - npm run report-coverage
