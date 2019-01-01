@@ -17,13 +17,14 @@ const bfs = (tree) => {
     return output;
 };
 
-
 const isGoodInputs = (functions, tree) => { 
     const all_elements = bfs(tree);
     var output = {};
+
+    //Check if function
     for(var key of all_elements) {
         if(typeof functions[key] !== 'function') {
-            output[key] = "function Not found";
+            output[`${key}`] = "function Not found";
         }
     }
     

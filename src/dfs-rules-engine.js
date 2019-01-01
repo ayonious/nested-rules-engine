@@ -31,17 +31,22 @@ const serialTraverse = (inputs, functions, tree, options) => {
             return createOutput(functions[current], inputs, verboseOutput);
         }
         //todo check for empty object
+        var isFound = false;
         for(var key in current) {
             getVerbose(`Executing Function ${key}`);
             const thisRes = functions[key](inputs);
             getVerbose(`Result of Function ${key} is ${thisRes}`);
             if( thisRes === true ) {
                 current = current[key];
+                isFound = true;
                 break;
             }
         }
+        if(!isFound) {
+            break;
+        }
 	}
-	return null;
+	return createErrorOutput('Could not Hit Any Rules');
 };
 
 const parallelTraverse =  (inputs, functions, trees, options) => {

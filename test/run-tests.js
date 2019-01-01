@@ -136,15 +136,12 @@ describe('Test3: Non False return functions can work', () => {
 });
 
 
-describe('Test4: Basic Checks are working', () => {
-    it(`Missing Functions should be caught`, function () {
-        const rules = require('./test3/sample');
-        const functions = require('./test3/functions.js');
-        const inputs = require('./test3/inputs');
+describe('Basic Checks are working', () => {
+    it(`Test4: Missing Functions should be caught`, function () {
+        const rules = require('./test4/sample');
+        const functions = require('./test4/functions.js');
+        const inputs = require('./test4/inputs');
         
-        //prepare inputs
-        delete functions.default;
-        delete functions.you_are_old_enough;
         
         const res = executeEngine(inputs, functions, rules);
         const serialExpectedOutput = {
@@ -155,6 +152,21 @@ describe('Test4: Basic Checks are working', () => {
                     you_are_old_enough: "function Not found"
                 }
             }
+        };
+        expect(res).to.deep.equal(serialExpectedOutput);
+    });
+
+    it(`Test5: No Final Rule Hit should be caught`, function () {
+        var rules = require('./test5/sample');
+        const functions = require('./test5/functions.js');
+        var inputs = require('./test5/inputs');
+        
+        inputs.ageType = 'child'
+
+        const res = executeEngine(inputs, functions, rules);
+        const serialExpectedOutput = {
+            result: null,
+            logs : 'Could not Hit Any Rules'
         };
         expect(res).to.deep.equal(serialExpectedOutput);
     });
