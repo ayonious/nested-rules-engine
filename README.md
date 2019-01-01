@@ -11,23 +11,8 @@ You have a set of rules that computes something. Some rules are dependent on eac
 
 
 # Ideas to Be implemented in Future
-1. Engine should have some way to combine AND, OR functions. program becomes super readable if this is done
+1. Have some Basic Checks
 
 ```
-aasf:
-  state1 or state2:
-    (state4 or state33) and state5:
-      thnigs_look_great
-```
-
-Priority of functions to implements an, or, ()
-
-2. There should be some actions that sets some variables in output rather than actually return output.
-
-```
-aasf:
-  state1:
-    action:_set_variable_12_as($variable) #this wont be return statement
-    (state4 or state33) and state5:
-      thnigs_look_great
+Make sure there is functions defined for each of them
 ```

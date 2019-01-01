@@ -2,7 +2,7 @@ const {executeEngine} = require('../src/dfs-rules-engine');
 const {expect} = require('chai');
 
 
-describe('Simplest parallel test should pass', () => {
+describe('Test1: Simplest parallel test should pass', () => {
     const rules = require('./test1/sample');
     const functions = require('./test1/functions.js');
     const inputs = require('./test1/inputs');
@@ -71,9 +71,7 @@ describe('Simplest parallel test should pass', () => {
     });
 });
 
-
-
-describe('Simplest serial test should pass', () => {
+describe('Test2: Simplest serial test should pass', () => {
     const rules = require('./test2/sample');
     const functions = require('./test2/functions.js');
     const inputs = require('./test2/inputs');
@@ -116,5 +114,48 @@ describe('Simplest serial test should pass', () => {
           ]
         };
         expect(res).to.deep.equal(expectedSerialVerboseRes);
+    });
+});
+
+
+describe('Test3: Non False return functions can work', () => {
+    const rules = require('./test3/sample');
+    const functions = require('./test3/functions.js');
+    const inputs = require('./test3/inputs');
+
+    it(`Should have output`, function () {
+        const res = executeEngine(inputs, functions, rules);
+        const serialExpectedOutput = {
+            result : {
+                "productBought" : "alcohol"
+            },
+            logs: []
+        };
+        expect(res).to.deep.equal(serialExpectedOutput);
+    });
+});
+
+
+describe('Test4: Basic Checks are working', () => {
+    it(`Missing Functions should be caught`, function () {
+        const rules = require('./test3/sample');
+        const functions = require('./test3/functions.js');
+        const inputs = require('./test3/inputs');
+        
+        //prepare inputs
+        delete functions.default;
+        delete functions.you_are_old_enough;
+        
+        const res = executeEngine(inputs, functions, rules);
+        const serialExpectedOutput = {
+            result: null,
+            logs : {
+                inputCheckErrors: {
+                    default: "function Not found",
+                    you_are_old_enough: "function Not found"
+                }
+            }
+        };
+        expect(res).to.deep.equal(serialExpectedOutput);
     });
 });

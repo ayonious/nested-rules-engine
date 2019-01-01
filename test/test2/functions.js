@@ -49,7 +49,19 @@ const functions = {
 			getting: 'my car',
 			finding: 'my phone'
 		};
-	}
+	},
+	just_rest: () => {
+		return {
+			getting: 'rest',
+			finding: 'bed'
+		};
+	},
+	have_fun: () => {
+		return {
+			getting: 'money',
+			finding: 'wallet'
+		};
+	},
 };
 
 module.exports = functions;

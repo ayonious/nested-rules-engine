@@ -1,14 +1,18 @@
+const {isGoodInputs} = require('./input-checker');
+const {createErrorOutput, createOutput} = require('./output-formatter');
+
 const serialTraverse = (inputs, functions, tree, options) => {
+    // Check input validity
+    const resCheckInputs = isGoodInputs(functions, tree);
+    if (resCheckInputs !== true) {
+        return createErrorOutput({
+            inputCheckErrors: resCheckInputs
+        });
+    }
+    
     let current = tree;
     let isVerbose = options && options.verbose === true;
     let verboseOutput = [];
-
-    const createOutput = (executable, inputs, verboseOutput) => {
-        return {
-            result: executable(inputs),
-            logs: verboseOutput
-        };
-    };
 
     const getVerbose = ( text ) => {
         if(isVerbose) { 
@@ -47,7 +51,6 @@ const parallelTraverse =  (inputs, functions, trees, options) => {
     }
     return res;
 };
-
 
 const executeEngine =  (inputs, functions, trees, options) => {
     if(options && options.isParallel === true) {
