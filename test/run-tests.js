@@ -171,3 +171,19 @@ describe('Basic Checks are working', () => {
         expect(res).to.deep.equal(serialExpectedOutput);
     });
 });
+
+describe('Test6: Simplest Test is passing', () => {
+    it(`Smallest 1 liner test`, function () {
+        const rules = require('./test6/sample');
+        const functions = require('./test6/functions.js');
+        const inputs = require('./test6/inputs');
+        const res = executeEngine(inputs, functions, rules);
+        const serialExpectedOutput = {
+            result : {
+                "productBought" : "alcohol"
+            },
+            logs: []
+        };
+        expect(res).to.deep.equal(serialExpectedOutput);
+    });
+});
