@@ -1,6 +1,7 @@
 # Conditionally Nested Rules Engine
 
 [![Build Status](https://travis-ci.org/ayonious/nested-rules-engine.svg?branch=master)](https://travis-ci.org/ayonious/nested-rules-engine)
+[![npm version](https://badge.fury.io/js/nested-rules-engine.svg)](https://badge.fury.io/js/nested-rules-engine)
 [![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fayonious%2Fnested-rules-engine.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2Fayonious%2Fnested-rules-engine?ref=badge_shield)
 [![dependencies Status](https://david-dm.org/ayonious/nested-rules-engine/status.svg)](https://david-dm.org/ayonious/nested-rules-engine)
 [![devDependencies Status](https://david-dm.org/ayonious/nested-rules-engine/dev-status.svg)](https://david-dm.org/ayonious/nested-rules-engine?type=dev)
@@ -14,7 +15,7 @@ A simple Decision tree based Rule Engine described using json files. Rules are e
 3. Fast by default uses mostly bfs and dfs algorithms
 4. Easy to Debug with --verbose options
 5. Do multiple executions with parallel Option
-6. Synchronous (and Async: TODO)
+6. Synchronous
 
 
 ## Installation
@@ -43,10 +44,7 @@ const inputs = {
   "type" : "human",
   "iqLevel": 500,
   "kindnessLevel": 0,
-  "postcode": 12223,
-  "curiosityLevel": 111111,
-  "feeling": "bad",
-  "temp": 101
+  "postcode": 12223
 }
 
 // Step3: Make your custom Functions
@@ -84,11 +82,14 @@ const functions = {
 const res = executeEngine(inputs, functions, rules);
 
 // Output res:
-/* 
-[{
-	payload: 'doing homework',
-	effort: 'im getting sick'
-}]
+/*
+*	{
+*			result: {
+*					payload: 'doing homework',
+*					effort: 'im getting sick'
+*			},
+*			logs: []
+*	}
 */
 ```
 
@@ -166,8 +167,8 @@ Sample
 2. logs: Detailed logs while engine got executed (by default its disabled)
 
 ## Hard Examples
-1. Example with verbose output, multiple executions
-2. Example with Creating new set of inputs while engine is executing
+1. Example with verbose output, multiple executions [Here](https://github.com/ayonious/nested-rules-engine/blob/master/test/advanced-example-test1)
+2. Example with Creating new set of inputs while engine is executing [Here](https://github.com/ayonious/nested-rules-engine/blob/master/test/advanced-example-test1)
 
 ## Debugging
 To see details logging turn on logging with option
@@ -176,10 +177,4 @@ executeEngine(inputs, functions, rules, { verbose: true });
 ```
 
 ## License
-[MIT](./LICENSE)
-
-
-## Todo
-1. Async
-2. Add Better examples
-3. Add links of direct github
+[MIT](https://github.com/ayonious/nested-rules-engine/blob/master/LICENSE)
