@@ -1,15 +1,16 @@
-const createOutput = (executable, inputs, verboseOutput) => {
+const createReturnDto = (result, logs) => {
     return {
-        result: executable(inputs),
-        logs: verboseOutput
+        result: result,
+        logs: logs
     };
 };
 
+const createOutput = (executable, inputs, verboseOutput) => {
+    return createReturnDto(executable(inputs), verboseOutput);
+};
+
 const createErrorOutput = (errorLogs) => {
-    return {
-        result: null,
-        logs: errorLogs
-    };
+    return createReturnDto(null, errorLogs);
 };
 
 module.exports = {

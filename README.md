@@ -38,10 +38,9 @@ const rules = {
   }
 };
 
-//Step2: make set of inputs collection
+// Step2: make set of inputs collection
 const inputs = {
   "type" : "human",
-  "racismLevel" : 1,
   "iqLevel": 500,
   "kindnessLevel": 0,
   "postcode": 12223,
@@ -83,17 +82,28 @@ const functions = {
 
 // Step4: Execute Engine
 const res = executeEngine(inputs, functions, rules);
+
+// Output res:
+/* 
+[{
+	payload: 'doing homework',
+	effort: 'im getting sick'
+}]
+*/
 ```
 
 
 ## Documentation
 Engine Execution Signature: 
 ```
-executeEngine(inputs, functions, rules, options);
+executeEngine(variables, functions, rules, options);
 ```
 
 ### Inputs 
-#### inputs: Collection of input values/ constants on which rule engine will execute
+
+#### variables: Collection of values on which rule engine will execute
+You can change these collection of variables (Add/Edit/Delte them) as you traverse the decision tree of rules.
+
 Sample 
 ```
 {
@@ -104,12 +114,12 @@ Sample
 
 #### functions: Collection of functions that decide which way the tree should be traversed. 
 
-In case the function indicates a final decision in tree (leaf): 
+In case the function indicates a final decision in tree (leaf of decision tree): 
 ```
   Output can be anything that you want to see as `result`
 ```
 
-In case the function is makes intermediate decision: 
+In case the function is makes an intermediate decision (branch of decision tree): 
 ```
 if output is true this means this branch should be traversed
 else the function will be executed
@@ -167,3 +177,9 @@ executeEngine(inputs, functions, rules, { verbose: true });
 
 ## License
 [MIT](./LICENSE)
+
+
+## Todo
+1. Async
+2. Add Better examples
+3. Add links of direct github

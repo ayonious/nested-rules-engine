@@ -24,7 +24,7 @@ const isGoodInputs = (functions, tree) => {
     //Check if function
     for(var key of all_elements) {
         if(typeof functions[key] !== 'function') {
-            output[`${key}`] = "function Not found";
+            output[`${key}`] = 'function Not found';
         }
     }
     
@@ -33,7 +33,7 @@ const isGoodInputs = (functions, tree) => {
     } else {
         return output;
     }
-}
+};
 
 module.exports = {
     isGoodInputs

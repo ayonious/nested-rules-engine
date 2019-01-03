@@ -18,7 +18,7 @@ const serialTraverse = (inputs, functions, tree, options) => {
         if(isVerbose) { 
             verboseOutput.push( text );
         }
-    }
+    };
 
     while(true) {
         if (current === null) {
@@ -45,12 +45,12 @@ const serialTraverse = (inputs, functions, tree, options) => {
         if(!isFound) {
             break;
         }
-	}
-	return createErrorOutput('Could not Hit Any Rules');
+    }
+    return createErrorOutput('Could not Hit Any Rules');
 };
 
 const parallelTraverse =  (inputs, functions, trees, options) => {
-    res = [];
+    let res = [];
     for (let tree of trees) {
         res.push(serialTraverse(inputs, functions, tree, options));
     }

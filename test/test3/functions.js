@@ -1,11 +1,11 @@
 const functions = {
-	you_are_a_human: ({type}) => {
+	you_are_a_human: ({ type }) => {
 		return type === 'human';
 	},
 	find_out_age: (inputs) => {
-		const {ageType} = inputs;
+		const { ageType } = inputs;
 		let age;
-		if(ageType === 'adult') {
+		if (ageType === 'adult') {
 			age = 18;
 		} else {
 			age = 15;
@@ -16,18 +16,18 @@ const functions = {
 	default: () => {
 		return true;
 	},
-	dummy: () => {},
-	you_are_old_enough: ({age}) => {
+	dummy: () => { },
+	you_are_old_enough: ({ age }) => {
 		return age >= 18;
 	},
 	buy_alcohol: () => {
 		return {
-			"productBought" : "alcohol"
+			"productBought": "alcohol"
 		}
 	},
 	buy_milk: () => {
 		return {
-			"productBought" : "milk"
+			"productBought": "milk"
 		}
 	}
 };
