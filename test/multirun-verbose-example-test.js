@@ -16,7 +16,6 @@ describe('Advanced Example: Multi Execution and verbose output', () => {
         }, {
             "the_cup_is_not_empty": {
                 "you_drank_too_much_water": "feeling_sick",
-                "default": "go_home_and_sleep"
             },
             "default" : "there_is_no_option"
         }];
@@ -61,7 +60,7 @@ describe('Advanced Example: Multi Execution and verbose output', () => {
         
         const options = {
             verbose: true,
-            isParallel: true
+            multiple: true
         };
 
         // Step4: Execute Engine
