@@ -67,7 +67,7 @@ describe('Advanced Example: Multi Execution and verbose output', () => {
         // Step4: Execute Engine
         const res = executeEngine(inputs, functions, rules, options);
 
-        //console.log(res);
+        console.log(res);
         expect(res).to.deep.equal(
             [{ 
                 result: null,

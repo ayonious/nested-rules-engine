@@ -1,7 +1,7 @@
 const {isGoodInputs} = require('./input-checker');
 const {createErrorOutput, createOutput} = require('./output-formatter');
 
-const singleTraverse = (inputs, functions, tree, options) => {
+const serialTraverse = (inputs, functions, tree, options) => {
     // Check input validity
     const resCheckInputs = isGoodInputs(functions, tree);
     if (resCheckInputs !== true) {
@@ -49,20 +49,19 @@ const singleTraverse = (inputs, functions, tree, options) => {
     return createErrorOutput('Could not Hit Any Rules');
 };
 
-const multieTraverse =  (inputs, functions, trees, options) => {
+const parallelTraverse =  (inputs, functions, trees, options) => {
     let res = [];
     for (let tree of trees) {
-        res.push(singleTraverse(inputs, functions, tree, options));
+        res.push(serialTraverse(inputs, functions, tree, options));
     }
-    console.log("hello", res);
     return res;
 };
 
 const executeEngine =  (inputs, functions, trees, options) => {
-    if(options && options.multiple === true) {
-        return multieTraverse(inputs, functions, trees, options);
+    if(options && options.isParallel === true) {
+        return parallelTraverse(inputs, functions, trees, options);
     } else {
-        return singleTraverse(inputs, functions, trees, options);
+        return serialTraverse(inputs, functions, trees, options);
     }
 };
 

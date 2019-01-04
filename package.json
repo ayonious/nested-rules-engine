@@ -1,6 +1,6 @@
 {
   "name": "nested-rules-engine",
-  "version": "1.0.0-beta1",
+  "version": "1.0.0",
   "description": "Nested Conditional Rules Engine",
   "main": "index.js",
   "scripts": {
