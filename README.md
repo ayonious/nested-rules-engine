@@ -14,13 +14,13 @@ A simple Decision tree based Rule Engine described using json files. Rules are e
 2. Create new set of inputs or change existing inputs as you traverse rules tree
 3. Fast by default uses mostly bfs and dfs algorithms
 4. Easy to Debug with --verbose options
-5. Do multiple executions with parallel Option
+5. Do multiple executions with --multiple Option
 6. Synchronous
 
 
 ## Installation
 ```
-npm install nested-rules-engine
+npm install nested-rules-engine --save
 ```
 
 ## Basic Example
@@ -29,53 +29,26 @@ const {executeEngine} = require('nested-rules-engine');
 
 // Step1: Define your conditional rules
 const rules = {
-  "you_are_a_human": {
-    "you_are_kind":{
-      "you_are_older_than_15": "you_must_be_something"
-    },
-    "you_are_smart": {
-      "you_live_near_my_house": "please_do_my_homework"
-    }
-  }
+		"you_are_a_human": {
+				"you_are_kind": "you_must_be_something",
+				"you_are_smart": "please_do_my_homework"
+		}
 };
 
 // Step2: make set of inputs collection
 const inputs = {
-  "type" : "human",
-  "iqLevel": 500,
-  "kindnessLevel": 0,
-  "postcode": 12223
+		"type" : "human",
+		"iqLevel": 500,
+		"kindnessLevel": 0
 }
 
 // Step3: Make your custom Functions
 const functions = {
-	you_are_a_human: ({type}) => {
-		return type === 'human';
-	},
-	you_are_smart: ({iqLevel}) => {
-		return iqLevel > 300;
-	},
-	you_are_kind: ({kindnessLevel}) => {
-		return kindnessLevel > 300;
-	},
-	you_are_older_than_15: ({age}) => {
-		return age > 15;
-	},
-	you_live_near_my_house: ({postcode}) => {
-		return postcode === 12223;
-	},
-	please_do_my_homework: () => {
-		return {
-			payload: 'doing homework',
-			effort: 'im getting sick'
-		};
-	},
-	you_must_be_something: () => {
-		return {
-			payload: 'data',
-			effort: 'infinity'
-		};
-	}
+		you_are_a_human: ({type}) =>  type === 'human',
+		you_are_smart: ({iqLevel}) => iqLevel > 300,
+		you_are_kind: ({kindnessLevel}) => kindnessLevel > 300,
+		please_do_my_homework: () => ({ payload: 'doing homework', effort: 'im getting sick'}),
+		you_must_be_something: () => ({ payload: 'data', effort: 'infinity'})
 };
 
 // Step4: Execute Engine
@@ -93,27 +66,21 @@ const res = executeEngine(inputs, functions, rules);
 */
 ```
 
+## Hard Examples
+1. Example with verbose output, multiple executions [Here](https://github.com/ayonious/nested-rules-engine/blob/master/test/advanced-example-test1)
+2. Example with Creating new set of inputs while engine is executing [Here](https://github.com/ayonious/nested-rules-engine/blob/master/test/advanced-example-test1)
 
 ## Documentation
 Engine Execution Signature: 
 ```
 executeEngine(variables, functions, rules, options);
 ```
-
 ### Inputs 
 
-#### variables: Collection of values on which rule engine will execute
+<code> variables </code>: Collection of values on which rule engine will execute
 You can change these collection of variables (Add/Edit/Delte them) as you traverse the decision tree of rules.
 
-Sample 
-```
-{
-  age: 12
-  name: something
-}
-```
-
-#### functions: Collection of functions that decide which way the tree should be traversed. 
+<code> functions </code> Collection of functions that decide which way the tree should be traversed. 
 
 In case the function indicates a final decision in tree (leaf of decision tree): 
 ```
@@ -138,7 +105,7 @@ Sample
 }
 ```
 
-#### rules: 
+<code> rules </code> 
 Decision Tree that will be traverse by this Rule Engine
 Sample
 ```
@@ -150,25 +117,15 @@ Sample
 }
 ```
 
-#### options
-1. verbose(boolean): Makes Sure you get enough logs while engine goes through all decision tree
-2. isParallel(boolean): You can run multiple Decision Trees based on same inputs. Input sets are shared between each tree
-Sample
-```
-{
-  verbose: true
-  isParallel: true
-}
-```
+<code> options </code>
+* verbose(boolean): Makes Sure you get enough logs while engine goes through all decision tree
+* multiple(boolean): You can run multiple Decision Trees based on same inputs. Input sets are shared between each tree
 
 
 ### Outputs
-1. result: Result of the engine execution. format of Result will be defined by you through `functions`
-2. logs: Detailed logs while engine got executed (by default its disabled)
+<code>  result </code>  Result of the engine execution. format of Result will be defined by you through `functions`
+<code>  logs </code>  Detailed logs while engine got executed (by default its disabled)
 
-## Hard Examples
-1. Example with verbose output, multiple executions [Here](https://github.com/ayonious/nested-rules-engine/blob/master/test/advanced-example-test1)
-2. Example with Creating new set of inputs while engine is executing [Here](https://github.com/ayonious/nested-rules-engine/blob/master/test/advanced-example-test1)
 
 ## Debugging
 To see details logging turn on logging with option

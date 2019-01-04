@@ -6,12 +6,8 @@ describe('Basic Example', () => {
         // Step1: Define your conditional rules
         const rules = {
             "you_are_a_human": {
-                "you_are_kind":{
-                    "you_are_older_than_15": "you_must_be_something"
-                },
-                "you_are_smart": {
-                    "you_live_near_my_house": "please_do_my_homework"
-                }
+                "you_are_kind": "you_must_be_something",
+                "you_are_smart": "please_do_my_homework"
             }
         };
         
@@ -19,39 +15,16 @@ describe('Basic Example', () => {
         const inputs = {
             "type" : "human",
             "iqLevel": 500,
-            "kindnessLevel": 0,
-            "postcode": 12223
+            "kindnessLevel": 0
         }
         
         // Step3: Make your custom Functions
         const functions = {
-            you_are_a_human: ({type}) => {
-                return type === 'human';
-            },
-            you_are_smart: ({iqLevel}) => {
-                return iqLevel > 300;
-            },
-            you_are_kind: ({kindnessLevel}) => {
-                return kindnessLevel > 300;
-            },
-            you_are_older_than_15: ({age}) => {
-                return age > 15;
-            },
-            you_live_near_my_house: ({postcode}) => {
-                return postcode === 12223;
-            },
-            please_do_my_homework: () => {
-                return {
-                    payload: 'doing homework',
-                    effort: 'im getting sick'
-                };
-            },
-            you_must_be_something: () => {
-                return {
-                    payload: 'data',
-                    effort: 'infinity'
-                };
-            }
+            you_are_a_human: ({type}) =>  type === 'human',
+            you_are_smart: ({iqLevel}) => iqLevel > 300,
+            you_are_kind: ({kindnessLevel}) => kindnessLevel > 300,
+            please_do_my_homework: () => ({ payload: 'doing homework', effort: 'im getting sick'}),
+            you_must_be_something: () => ({ payload: 'data', effort: 'infinity'})
         };
         
         // Step4: Execute Engine

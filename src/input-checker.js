@@ -21,13 +21,20 @@ const isGoodInputs = (functions, tree) => {
     const all_elements = bfs(tree);
     var output = {};
 
+    //Check if multiple trees
+    if(tree instanceof Array) {
+        output['tree'] = 'input tree contains an array please use single Element';
+    }
+    
     //Check if function
     for(var key of all_elements) {
         if(typeof functions[key] !== 'function') {
             output[`${key}`] = 'function Not found';
         }
     }
-    
+
+
+
     if(Object.keys(output).length === 0 && output.constructor === Object) {
         return true;
     } else {

@@ -9,7 +9,7 @@ describe('Test1: Simplest parallel test should pass', () => {
 
     it(`parallel traverse should work`, function () {
         const options = {
-            isParallel: true,
+            multiple: true,
             verbose: false
         };
 
@@ -30,7 +30,7 @@ describe('Test1: Simplest parallel test should pass', () => {
     });
     it(`parallel traverse should work with verbose output`, function () {
         const options = {
-            isParallel: true,
+            multiple: true,
             verbose: true
         };
         const res = executeEngine(inputs, functions, rules, options);
