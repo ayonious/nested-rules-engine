@@ -29,56 +29,43 @@ const {executeEngine} = require('nested-rules-engine');
 
 // Step1: Define your conditional rules
 const rules = {
-  "you_are_a_human": {
-    "you_are_kind":{
-      "you_are_older_than_15": "you_must_be_something"
-    },
-    "you_are_smart": {
-      "you_live_near_my_house": "please_do_my_homework"
-    }
-  }
+		"you_are_a_human": {
+				"you_are_kind": "help_me_find_my_book",
+				"you_are_smart": "please_do_my_homework",
+				"default": "there_is_no_option"
+		},
+		"default": "there_is_no_option"
 };
 
 // Step2: make set of inputs collection
 const inputs = {
-  "type" : "human",
-  "iqLevel": 500,
-  "kindnessLevel": 0,
-  "postcode": 12223,
-  "curiosityLevel": 111111,
-  "feeling": "bad",
-  "temp": 101
+		"type" : "human",
+		"kindnessLevel": 0,
+		"intelligence": 10
 }
 
 // Step3: Make your custom Functions
 const functions = {
-	you_are_a_human: ({type}) => {
-		return type === 'human';
-	},
-	you_are_smart: ({iqLevel}) => {
-		return iqLevel > 300;
-	},
-	you_are_kind: ({kindnessLevel}) => {
-		return kindnessLevel > 300;
-	},
-	you_are_older_than_15: ({age}) => {
-		return age > 15;
-	},
-	you_live_near_my_house: ({postcode}) => {
-		return postcode === 12223;
-	},
-	please_do_my_homework: () => {
-		return {
-			payload: 'doing homework',
-			effort: 'im getting sick'
-		};
-	},
-	you_must_be_something: () => {
-		return {
-			payload: 'data',
-			effort: 'infinity'
-		};
-	}
+		default : () => true,
+		you_are_a_human: ({type}) => type === 'human',
+		you_are_kind: ({kindnessLevel}) => kindnessLevel > 300,
+		you_are_smart: ({intelligence}) => intelligence > 5,
+		help_me_find_my_book: () => ({
+				payload: 'lets help someone',
+				effort: 'finding the book'
+		}),
+		you_should_like_helping: () => ({
+				payload: 'find people',
+				effort: 'help them'
+		}),
+		please_do_my_homework: () => ({
+				payload: 'doing homework',
+				effort: 'im getting sick'
+		}),
+		there_is_no_option: () => ({
+				payload: '??',
+				effort: '???'
+		})
 };
 
 // Step4: Execute Engine
@@ -105,19 +92,12 @@ executeEngine(variables, functions, rules, options);
 <code> variables </code> Collection of values on which rule engine will execute
 You can change these collection of variables (Add/Edit/Delte them) as you traverse the decision tree of rules.
 
-
 <code> functions </code> Collection of functions that decide which way the tree should be traversed. 
 
-In case the function indicates a final decision in tree (leaf of decision tree): 
-```
-  Output can be anything that you want to see as `result`
-```
-
-In case the function is makes an intermediate decision (branch of decision tree): 
-```
-if output is true this means this branch should be traversed
-else the function will be executed
-```
+* In case the function indicates a final decision in tree (leaf of decision tree): Output can be anything that you want to see as `result`
+* In case the function is makes an intermediate decision (branch of decision tree): 
+ - if output is `true`: this means this branch should be traversed
+ - else: the function will be executed
 
 Sample
 ```
