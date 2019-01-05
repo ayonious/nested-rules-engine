@@ -1,6 +1,7 @@
 # Conditionally Nested Rules Engine
 
 [![Build Status](https://travis-ci.org/ayonious/nested-rules-engine.svg?branch=master)](https://travis-ci.org/ayonious/nested-rules-engine)
+
 [![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fayonious%2Fnested-rules-engine.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2Fayonious%2Fnested-rules-engine?ref=badge_shield)
 [![dependencies Status](https://david-dm.org/ayonious/nested-rules-engine/status.svg)](https://david-dm.org/ayonious/nested-rules-engine)
 [![devDependencies Status](https://david-dm.org/ayonious/nested-rules-engine/dev-status.svg)](https://david-dm.org/ayonious/nested-rules-engine?type=dev)
@@ -15,7 +16,6 @@ A simple Decision tree based Rule Engine described using json files. Rules are e
 4. Easy to Debug with --verbose options
 5. Do multiple executions with parallel Option
 6. Synchronous (and Async: TODO)
-
 
 ## Installation
 ```
@@ -101,18 +101,11 @@ executeEngine(variables, functions, rules, options);
 
 ### Inputs 
 
-#### variables: Collection of values on which rule engine will execute
+<code> variables </code> Collection of values on which rule engine will execute
 You can change these collection of variables (Add/Edit/Delte them) as you traverse the decision tree of rules.
 
-Sample 
-```
-{
-  age: 12
-  name: something
-}
-```
 
-#### functions: Collection of functions that decide which way the tree should be traversed. 
+<code> functions </code> Collection of functions that decide which way the tree should be traversed. 
 
 In case the function indicates a final decision in tree (leaf of decision tree): 
 ```
@@ -137,7 +130,7 @@ Sample
 }
 ```
 
-#### rules: 
+<code> rules </code>
 Decision Tree that will be traverse by this Rule Engine
 Sample
 ```
@@ -149,21 +142,13 @@ Sample
 }
 ```
 
-#### options
-1. verbose(boolean): Makes Sure you get enough logs while engine goes through all decision tree
-2. isParallel(boolean): You can run multiple Decision Trees based on same inputs. Input sets are shared between each tree
-Sample
-```
-{
-  verbose: true
-  isParallel: true
-}
-```
-
+<code> options </code>
+* verbose(boolean): Makes Sure you get enough logs while engine goes through all decision tree
+* multiple(boolean): You can run multiple Decision Trees based on same inputs. Input sets are shared between each tree
 
 ### Outputs
-1. result: Result of the engine execution. format of Result will be defined by you through `functions`
-2. logs: Detailed logs while engine got executed (by default its disabled)
+<code> result </code> Result of the engine execution. format of Result will be defined by you through `functions`
+<code> logs </code> Detailed logs while engine got executed (by default its disabled)
 
 ## Hard Examples
 1. Example with verbose output, multiple executions
@@ -176,10 +161,17 @@ executeEngine(inputs, functions, rules, { verbose: true });
 ```
 
 ## License
-[MIT](./LICENSE)
+[MIT](https://github.com/ayonious/nested-rules-engine/blob/master/README.md)
 
 
 ## Todo
 1. Async
 2. Add Better examples
 3. Add links of direct github
+4. Fixbug: Match with outed branch
+5. test no match found
+6. test multiple executions first got errored
+7. integrate npm deployment directly
+8. npm badge
+9. Put back simple example
+10. put a simpler readme for god sake

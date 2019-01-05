@@ -1,6 +1,6 @@
 const {isGoodInputs} = require('./input-checker');
 const {createErrorOutput, createOutput} = require('./output-formatter');
-
+const {Stack} = require('./datastructures');
 const singleTraverse = (inputs, functions, tree, options) => {
     // Check input validity
     const resCheckInputs = isGoodInputs(functions, tree);
@@ -13,6 +13,7 @@ const singleTraverse = (inputs, functions, tree, options) => {
     let current = tree;
     let isVerbose = options && options.verbose === true;
     let verboseOutput = [];
+    var stack = new Stack(); stack.push(current);
 
     const getVerbose = ( text ) => {
         if(isVerbose) { 
@@ -20,16 +21,15 @@ const singleTraverse = (inputs, functions, tree, options) => {
         }
     };
 
-    while(true) {
-        if (current === null) {
-            break;
-        }
-            
+    while(!stack.isEmpty()) {
+        var current = stack.pop();
+        
         //base case
         if(typeof current !== 'object') {
             getVerbose( `Executing Function ${current}`);
             return createOutput(functions[current], inputs, verboseOutput);
         }
+        
         //todo check for empty object
         var isFound = false;
         for(var key in current) {
@@ -48,6 +48,7 @@ const singleTraverse = (inputs, functions, tree, options) => {
     }
     return createErrorOutput('Could not Hit Any Rules');
 };
+
 
 const multipleTraverse =  (inputs, functions, trees, options) => {
     let res = [];
