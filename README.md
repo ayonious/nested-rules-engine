@@ -32,7 +32,6 @@ const rules = {
 		"you_are_a_human": {
 				"you_are_kind": "help_me_find_my_book",
 				"you_are_smart": "please_do_my_homework",
-				"default": "there_is_no_option"
 		},
 		"default": "there_is_no_option"
 };
