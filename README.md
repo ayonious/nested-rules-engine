@@ -1,7 +1,8 @@
+## (Under consturction) Please dont use it yet
+
 # Conditionally Nested Rules Engine
 
 [![Build Status](https://travis-ci.org/ayonious/nested-rules-engine.svg?branch=master)](https://travis-ci.org/ayonious/nested-rules-engine)
-
 [![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fayonious%2Fnested-rules-engine.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2Fayonious%2Fnested-rules-engine?ref=badge_shield)
 [![dependencies Status](https://david-dm.org/ayonious/nested-rules-engine/status.svg)](https://david-dm.org/ayonious/nested-rules-engine)
 [![devDependencies Status](https://david-dm.org/ayonious/nested-rules-engine/dev-status.svg)](https://david-dm.org/ayonious/nested-rules-engine?type=dev)
@@ -19,7 +20,7 @@ A simple Decision tree based Rule Engine described using json files. Rules are e
 
 ## Installation
 ```
-npm install nested-rules-engine
+npm install nested-rules-engine --save
 ```
 
 ## Basic Example

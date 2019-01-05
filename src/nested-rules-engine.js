@@ -1,6 +1,7 @@
 const {isGoodInputs} = require('./input-checker');
 const {createErrorOutput, createOutput} = require('./output-formatter');
 const {Stack} = require('./datastructures');
+
 const singleTraverse = (inputs, functions, tree, options) => {
     // Check input validity
     const resCheckInputs = isGoodInputs(functions, tree);
@@ -29,11 +30,13 @@ const singleTraverse = (inputs, functions, tree, options) => {
             getVerbose( `Executing Function ${current}`);
             return createOutput(functions[current], inputs, verboseOutput);
         }
-        
+
         //todo check for empty object
         var isFound = false;
         for(var key in current) {
             getVerbose(`Executing Function ${key}`);
+            
+            
             const thisRes = functions[key](inputs);
             getVerbose(`Result of Function ${key} is ${thisRes}`);
             if( thisRes === true ) {

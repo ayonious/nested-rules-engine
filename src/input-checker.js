@@ -1,24 +1,7 @@
-const bfs = (tree) => {
-    let queue = [tree];
-    let output = [];
-
-    while ( queue.length > 0 ) {
-        var current = queue.pop();   
-        if(typeof current !== 'object') {
-            output.push(`${current}`);
-            continue;
-        }
-        for(var key in current) {
-            const nextCur = current[key];
-            output.push(`${key}`);
-            queue.push(nextCur);
-        }
-    }
-    return output;
-};
+const getAllNodesOfTree = require('./traverse');
 
 const isGoodInputs = (functions, tree) => { 
-    const all_elements = bfs(tree);
+    const all_elements = getAllNodesOfTree(tree);
     var output = {};
 
     //Check if function
@@ -38,3 +21,4 @@ const isGoodInputs = (functions, tree) => {
 module.exports = {
     isGoodInputs
 };
+
