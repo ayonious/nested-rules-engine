@@ -46,9 +46,6 @@ describe('Advanced Example: Change variables while engine Execution', () => {
 
         // Step4: Execute Engine
         const res = executeEngine(inputs, functions, rules, options);
-
-        console.log(res);
-
         expect(res).to.deep.equal({
             result: { 
                 payload: 'going home',

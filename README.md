@@ -60,10 +60,10 @@ const res = executeEngine(inputs, functions, rules);
 
 // Output res:
 /* 
-[{
-  payload: 'doing homework',
-  effort: 'im getting sick'
-}]
+{ 
+  result: { payload: 'doing homework', effort: 'im getting sick' },
+  logs: [] 
+}
 */
 ```
 
