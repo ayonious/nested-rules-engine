@@ -1,6 +1,7 @@
 # Conditionally Nested Rules Engine
 
 [![Build Status](https://travis-ci.org/ayonious/nested-rules-engine.svg?branch=master)](https://travis-ci.org/ayonious/nested-rules-engine)
+[![npm version](https://badge.fury.io/js/nested-rules-engine.svg)](https://badge.fury.io/js/nested-rules-engine)
 [![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fayonious%2Fnested-rules-engine.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2Fayonious%2Fnested-rules-engine?ref=badge_shield)
 [![dependencies Status](https://david-dm.org/ayonious/nested-rules-engine/status.svg)](https://david-dm.org/ayonious/nested-rules-engine)
 [![devDependencies Status](https://david-dm.org/ayonious/nested-rules-engine/dev-status.svg)](https://david-dm.org/ayonious/nested-rules-engine?type=dev)
@@ -75,26 +76,26 @@ executeEngine(variables, functions, rules, options);
 
 ### Inputs 
 
-<code> variables </code>  Collection of values on which rule engine will execute
+1. `variables`  Collection of values on which rule engine will execute
 You can change these collection of variables (Add/Edit/Delte them) as you traverse the decision tree of rules.
 
-<code> functions </code>  Collection of functions that decide which way the tree should be traversed.
+2. `functions`  Collection of functions that decide which way the tree should be traversed.
 
 * In case the function indicates a final decision in tree (leaf of decision tree): Output can be anything that you want to see as `result`
 * In case the function is makes an intermediate decision (branch of decision tree): 
  if output is `true`: this means this branch should be traversed
  else: the function will be executed
 
-<code> rules </code>  Decision Tree that will be traversed by this Rule Engine
+3. `rules`  Decision Tree that will be traversed by this Rule Engine
 
-<code> options </code>
+4. `options`
 * verbose(boolean): Makes Sure you get enough logs while engine goes through all decision tree
 * multiple(boolean): You can run multiple Decision Trees based on same inputs. Input sets are shared between each tree
 
 ### Outputs
-<code> result </code>: Result of the engine execution. format of Result will be defined by you through `functions`
+`result`: Result of the engine execution. format of Result will be defined by you through `functions`
 
-<code> logs </code>: Detailed logs while engine got executed (by default its disabled)
+`logs`: Detailed logs while engine got executed (by default its disabled)
 
 ## Hard Examples
 1. Example with verbose output, multiple executions [Find Here] (https://github.com/ayonious/nested-rules-engine/blob/master/test/multirun-verbose-example.js)

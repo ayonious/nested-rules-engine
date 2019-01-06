@@ -66,3 +66,4 @@ coverage
 
 # other plugins
 renovate.json
+.travis.yml
