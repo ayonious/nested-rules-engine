@@ -63,3 +63,6 @@ typings/
 # tests (not to add tests when publishing)
 test
 coverage
+
+# other plugins
+renovate.json
