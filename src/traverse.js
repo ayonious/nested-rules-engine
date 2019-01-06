@@ -1,25 +1,21 @@
-const Stack = require('./Stack');
+const isLeaf = (tree) => {
+    return typeof tree !== 'object';
+};
 
 const getAllNodesOfTree = (tree) => {
-    let stack = new Stack();
-    stack.push(tree)
     let output = [];
 
-    while ( stack.empty() ) {
-        var current = stack.pop();
-        //element is a leaf
-        if(typeof current !== 'object') {
+    const dfs = (current) => {
+        if(isLeaf(current)) {
             output.push(`${current}`);
-            continue;
+            return;
         }
-        
-        //element is a branch
         for(var key in current) {
-            const nextCur = current[key];
             output.push(`${key}`);
-            stack.push(nextCur);
+            dfs(current[key]);
         }
-    }
+    };
+    dfs(tree);
     return output;
 };
 

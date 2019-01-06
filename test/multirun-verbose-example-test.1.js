@@ -66,7 +66,6 @@ describe('Advanced Example: Multi Execution and verbose output', () => {
         // Step4: Execute Engine
         const res = executeEngine(inputs, functions, rules, options);
 
-        console.log(res);
         expect(res).to.deep.equal(
             [{ 
                 result: null,
@@ -76,7 +75,7 @@ describe('Advanced Example: Multi Execution and verbose output', () => {
                     } 
                 } 
             },{ 
-                result: { payload: 'going home', effort: 'im getting sleepy' },
+                result: { payload: '??', effort: '???' },
                 logs: [ 
                     'Executing Function the_cup_is_not_empty',
                     'Result of Function the_cup_is_not_empty is true',
@@ -84,7 +83,7 @@ describe('Advanced Example: Multi Execution and verbose output', () => {
                     'Result of Function you_drank_too_much_water is false',
                     'Executing Function default',
                     'Result of Function default is true',
-                    'Executing Function go_home_and_sleep' ] 
+                    'Executing Function there_is_no_option' ] 
             }]
         );
     }); 

@@ -187,3 +187,19 @@ describe('Test6: Simplest Test is passing', () => {
         expect(res).to.deep.equal(serialExpectedOutput);
     });
 });
+
+describe('Test7: Very Nested test', () => {
+    it(`Should pass`, function () {
+        const rules = require('./test6/sample');
+        const functions = require('./test6/functions.js');
+        const inputs = require('./test6/inputs');
+        const res = executeEngine(inputs, functions, rules);
+        const serialExpectedOutput = {
+            result : {
+                "productBought" : "alcohol"
+            },
+            logs: []
+        };
+        expect(res).to.deep.equal(serialExpectedOutput);
+    });
+});

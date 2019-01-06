@@ -1,4 +1,4 @@
-const getAllNodesOfTree = require('./traverse');
+const { getAllNodesOfTree } = require('./traverse');
 
 const isGoodInputs = (functions, tree) => { 
     const all_elements = getAllNodesOfTree(tree);

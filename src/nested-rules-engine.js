@@ -1,58 +1,57 @@
 const {isGoodInputs} = require('./input-checker');
 const {createErrorOutput, createOutput} = require('./output-formatter');
-const {Stack} = require('./datastructures');
-
 const singleTraverse = (inputs, functions, tree, options) => {
     // Check input validity
-    const resCheckInputs = isGoodInputs(functions, tree);
-    if (resCheckInputs !== true) {
+    var resCheckInputs = isGoodInputs(functions, tree);
+    if (isGoodInputs(functions, tree) !== true) {
         return createErrorOutput({
             inputCheckErrors: resCheckInputs
         });
     }
-    
-    let current = tree;
+
+    // prepare variables for verbose inputs
     let isVerbose = options && options.verbose === true;
     let verboseOutput = [];
-    var stack = new Stack(); stack.push(current);
-
+    
     const getVerbose = ( text ) => {
         if(isVerbose) { 
             verboseOutput.push( text );
         }
     };
 
-    while(!stack.isEmpty()) {
-        var current = stack.pop();
-        
+    var isResFound = false; //true when we reached the result node
+    var output;
+
+    const dfs = (current) => {
         //base case
         if(typeof current !== 'object') {
             getVerbose( `Executing Function ${current}`);
-            return createOutput(functions[current], inputs, verboseOutput);
+            output = createOutput(functions[current], inputs, verboseOutput);
+            isResFound = true;
+            return true;
         }
 
-        //todo check for empty object
-        var isFound = false;
         for(var key in current) {
+            
             getVerbose(`Executing Function ${key}`);
-            
-            
             const thisRes = functions[key](inputs);
             getVerbose(`Result of Function ${key} is ${thisRes}`);
+            
             if( thisRes === true ) {
-                current = current[key];
-                isFound = true;
+                dfs(current[key]);
+            }
+
+            if(isResFound) {
                 break;
             }
         }
-        if(!isFound) {
-            break;
-        }
+    };
+    dfs(tree);
+    if(isResFound) {
+        return output;
     }
     return createErrorOutput('Could not Hit Any Rules');
 };
-
-
 const multipleTraverse =  (inputs, functions, trees, options) => {
     let res = [];
     for (let tree of trees) {
@@ -60,7 +59,6 @@ const multipleTraverse =  (inputs, functions, trees, options) => {
     }
     return res;
 };
-
 const executeEngine =  (inputs, functions, trees, options) => {
     if(options && options.multiple === true) {
         return multipleTraverse(inputs, functions, trees, options);
@@ -68,7 +66,6 @@ const executeEngine =  (inputs, functions, trees, options) => {
         return singleTraverse(inputs, functions, trees, options);
     }
 };
-
 module.exports = {
     executeEngine
 };
