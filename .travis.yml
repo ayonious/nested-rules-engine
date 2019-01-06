@@ -1,5 +1,11 @@
 language: node_js
-
 node_js:
-  - stable
-  - --lts
+- stable
+- "--lts"
+deploy:
+  provider: npm
+  email: jaissatai6@gmail.com
+  api_key:
+    secure: gmcmZJLQN8LGUlcEhweOZO2Uw3ieMyd1tBf5LYM2VHEOJ2SLejJJm79HgB1mwAGdDHQp70Bjdg5pDxGMbd2LXrrOtudYqDFvnHxu6+CLlYtfVxTnfYkelhSHZ8FjobtcF/sgjFhlom3DICSgnBnn/UX1YbWG1ELWTqwol4+TtgXsTOfW6lQQQJFnNoxdfaj9FJtctTfAvGRjKVdwYLBCPc98pl4FmPUiF2K9bHfxg1uqUuQbBVazO5DHjGlrbu2T5ptCw3XojNZaUMgu37ZQkVW4qxTCfa5m0VtxAkXEMt4Z7OVEm5dkuabIHxo21p8s/MvUZCZedR5GXMRkbKyWcM2qR+mDrmBp6aYjmsbSffB2aLbfyTgtUMyAgs/J/JLPr0dfn0r63dkEM3mZs1dbQtqfSRqNbFxoA7bPOTneVsrX5/VKJForCdPjpPV6fGM61IzD5odqzCHGcHnSMNbVHJdNEMUVyVmO5ROWKAQRkty5sYeL7KYR1TJoakSCMUuh9OWrV41rDrKIqAo/G6TaZGQg18Fo5RJSJ1qKuJDx8//jHCJsR5kudN7z3ffETgUenvErs0+BoFu9iygHiapWX4idllhlYQf0Ja305cjxjuhtNEb4+rma/QjeATUTHHQM1j8D1WXyatFbf+rSsalnEkeoy601aPH/omDLpNcPM0w=
+  on:
+    branch: master
