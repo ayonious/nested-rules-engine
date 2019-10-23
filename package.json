@@ -1,6 +1,6 @@
 {
   "name": "nested-rules-engine",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "repository": "github:ayonious/nested-rules-engine",
   "description": "Nested Conditional Rules Engine",
   "main": "index.js",
@@ -11,6 +11,6 @@
   "license": "MIT",
   "devDependencies": {
     "chai": "^4.2.0",
-    "mocha": "^6.2.1"
+    "mocha": "^6.2.2"
   }
 }
