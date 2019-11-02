@@ -1,6 +1,4 @@
 const {executeEngine} = require('../src/nested-rules-engine');
-const {expect} = require('chai');
-
 
 describe('Test1: Simplest parallel test should pass', () => {
     const rules = require('./test1/sample');
@@ -14,7 +12,7 @@ describe('Test1: Simplest parallel test should pass', () => {
         };
 
         const res = executeEngine(inputs, functions, rules, options);
-        expect(res).to.deep.equal([{
+        expect(res).toStrictEqual([{
             result : {
                 payload: 'doing homework', 
                 effort: 'im getting sick' 
@@ -35,7 +33,7 @@ describe('Test1: Simplest parallel test should pass', () => {
         };
         const res = executeEngine(inputs, functions, rules, options);
 
-        expect(res).to.deep.equal([{
+        expect(res).toStrictEqual([{
             result : {
                 payload: 'doing homework', 
                 effort: 'im getting sick' 
@@ -85,7 +83,7 @@ describe('Test2: Simplest serial test should pass', () => {
             },
             logs: []
         };
-        expect(res).to.deep.equal(serialExpectedOutput);
+        expect(res).toStrictEqual(serialExpectedOutput);
     });
 
     it(`serial traverse should work with verbose output`, function () {
@@ -113,7 +111,7 @@ describe('Test2: Simplest serial test should pass', () => {
                 "Executing Function please_do_my_homework",
           ]
         };
-        expect(res).to.deep.equal(expectedSerialVerboseRes);
+        expect(res).toStrictEqual(expectedSerialVerboseRes);
     });
 });
 
@@ -131,7 +129,7 @@ describe('Test3: Non False return functions can work', () => {
             },
             logs: []
         };
-        expect(res).to.deep.equal(serialExpectedOutput);
+        expect(res).toStrictEqual(serialExpectedOutput);
     });
 });
 
@@ -153,7 +151,7 @@ describe('Basic Checks are working', () => {
                 }
             }
         };
-        expect(res).to.deep.equal(serialExpectedOutput);
+        expect(res).toStrictEqual(serialExpectedOutput);
     });
 
     it(`Test5: No Final Rule Hit should be caught`, function () {
@@ -168,7 +166,7 @@ describe('Basic Checks are working', () => {
             result: null,
             logs : 'Could not Hit Any Rules'
         };
-        expect(res).to.deep.equal(serialExpectedOutput);
+        expect(res).toStrictEqual(serialExpectedOutput);
     });
 });
 
@@ -184,7 +182,7 @@ describe('Test6: Simplest Test is passing', () => {
             },
             logs: []
         };
-        expect(res).to.deep.equal(serialExpectedOutput);
+        expect(res).toStrictEqual(serialExpectedOutput);
     });
 });
 
@@ -200,6 +198,6 @@ describe('Test7: Very Nested test', () => {
             },
             logs: []
         };
-        expect(res).to.deep.equal(serialExpectedOutput);
+        expect(res).toStrictEqual(serialExpectedOutput);
     });
 });

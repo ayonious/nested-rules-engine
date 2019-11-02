@@ -1,6 +1,7 @@
 # Conditionally Nested Rules Engine
 
 [![Build Status](https://travis-ci.org/ayonious/nested-rules-engine.svg?branch=master)](https://travis-ci.org/ayonious/nested-rules-engine)
+[![codecov](https://codecov.io/gh/ayonious/nested-rules-engine/branch/master/graph/badge.svg)](https://codecov.io/gh/ayonious/nested-rules-engine)
 [![npm version](https://badge.fury.io/js/nested-rules-engine.svg)](https://badge.fury.io/js/nested-rules-engine)
 [![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fayonious%2Fnested-rules-engine.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2Fayonious%2Fnested-rules-engine?ref=badge_shield)
 [![dependencies Status](https://david-dm.org/ayonious/nested-rules-engine/status.svg)](https://david-dm.org/ayonious/nested-rules-engine)
