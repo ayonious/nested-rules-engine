@@ -1,5 +1,4 @@
 const {executeEngine} = require('../src/nested-rules-engine');
-const {expect} = require('chai');
 
 describe('Advanced Example: Change variables while engine Execution', () => {
     it(`is working`, function () {
@@ -46,7 +45,7 @@ describe('Advanced Example: Change variables while engine Execution', () => {
 
         // Step4: Execute Engine
         const res = executeEngine(inputs, functions, rules, options);
-        expect(res).to.deep.equal({
+        expect(res).toStrictEqual({
             result: { 
                 payload: 'going home',
                 effort: 'im getting sick because I drank in total 15 glasses of water' 

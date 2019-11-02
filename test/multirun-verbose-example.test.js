@@ -1,5 +1,4 @@
 const {executeEngine} = require('../src/nested-rules-engine');
-const {expect} = require('chai');
 
 describe('Advanced Example: Multi Execution and verbose output', () => {
     it(`is working`, function () {
@@ -66,7 +65,7 @@ describe('Advanced Example: Multi Execution and verbose output', () => {
         // Step4: Execute Engine
         const res = executeEngine(inputs, functions, rules, options);
 
-        expect(res).to.deep.equal(
+        expect(res).toStrictEqual(
             [{ 
                 result: null,
                 logs: { 

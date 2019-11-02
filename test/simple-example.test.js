@@ -1,5 +1,4 @@
 const {executeEngine} = require('../src/nested-rules-engine');
-const {expect} = require('chai');
 
 describe('Simple Example', () => {
     it(`is working`, function () {
@@ -39,7 +38,7 @@ describe('Simple Example', () => {
         // Step4: Execute Engine
         const res = executeEngine(inputs, functions, rules);
         
-        expect(res).to.deep.equal({ 
+        expect(res).toStrictEqual({ 
             result: {
                 payload: 'doing homework',
                 effort: 'im getting sick'
