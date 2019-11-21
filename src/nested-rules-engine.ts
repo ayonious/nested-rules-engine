@@ -62,7 +62,7 @@ const multipleTraverse =  (inputs: any, functions: any, trees: any, options: any
     return res;
 };
 
-export const executeEngine =  (inputs: any, functions: any, trees: any, options: any): Result | Result[] => {
+export const executeEngine =  (inputs: any, functions: any, trees: any, options?: any ): Result | Result[] => {
     if(options && options.multiple === true) {
         return multipleTraverse(inputs, functions, trees, options);
     } else {
