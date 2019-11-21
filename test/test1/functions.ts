@@ -1,4 +1,4 @@
-const functions = {
+export const functions = {
 	you_are_a_human: ({type}) => {
 		return type === 'human';
 	},
@@ -63,5 +63,3 @@ const functions = {
 		};
 	},
 };
-
-module.exports = functions;

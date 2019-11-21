@@ -1,8 +1,8 @@
-const { getAllNodesOfTree } = require('./traverse');
+import { getAllNodesOfTree } from './traverse';
 
-const isGoodInputs = (functions, tree) => { 
-    const all_elements = getAllNodesOfTree(tree);
-    var output = {};
+export const isGoodInputs = (functions: any, tree: any) => { 
+    const all_elements: string[] = getAllNodesOfTree(tree);
+    var output: any = {};
 
     //Check if function
     for(var key of all_elements) {
@@ -17,8 +17,3 @@ const isGoodInputs = (functions, tree) => {
         return output;
     }
 };
-
-module.exports = {
-    isGoodInputs
-};
-

@@ -1,7 +1,7 @@
-const {executeEngine} = require('../src/nested-rules-engine');
+import {executeEngine} from '../src/nested-rules-engine';
 
 describe('Test1: Simplest parallel test should pass', () => {
-    const rules = require('./test1/sample');
+    import * as rules from './test1/sample';
     const functions = require('./test1/functions.js');
     const inputs = require('./test1/inputs');
 

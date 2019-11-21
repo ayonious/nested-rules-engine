@@ -1,4 +1,4 @@
-const {executeEngine} = require('../src/nested-rules-engine');
+import {executeEngine} from '../src/nested-rules-engine';
 
 describe('Advanced Example: Multi Execution and verbose output', () => {
     it(`is working`, function () {

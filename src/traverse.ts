@@ -1,11 +1,11 @@
-const isLeaf = (tree) => {
+const isLeaf = (tree:any) => {
     return typeof tree !== 'object';
 };
 
-const getAllNodesOfTree = (tree) => {
-    let output = [];
+export const getAllNodesOfTree = (tree: any): string[] => {
+    let output: string[] = [];
 
-    const dfs = (current) => {
+    const dfs = (current: any) => {
         if(isLeaf(current)) {
             output.push(`${current}`);
             return;
@@ -17,8 +17,4 @@ const getAllNodesOfTree = (tree) => {
     };
     dfs(tree);
     return output;
-};
-
-module.exports = {
-    getAllNodesOfTree
 };
