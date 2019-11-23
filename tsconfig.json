@@ -9,7 +9,8 @@
     "lib": ["es2017", "dom"],
     "strict": true,
     "types": ["jest"],
-    "resolveJsonModule": true
+    "resolveJsonModule": true,
+    "esModuleInterop": true,
   },
   "include": ["src/**/*", "index.ts"]
 }
