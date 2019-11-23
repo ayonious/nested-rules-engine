@@ -1,1 +1,1 @@
-export * from './src/nested-rules-engine';
+export { executeEngine } from "./src/nested-rules-engine";
