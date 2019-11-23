@@ -1,11 +1,27 @@
-# Conditionally Nested Rules Engine
-
-[![Build Status](https://travis-ci.org/ayonious/nested-rules-engine.svg?branch=master)](https://travis-ci.org/ayonious/nested-rules-engine)
-[![codecov](https://codecov.io/gh/ayonious/nested-rules-engine/branch/master/graph/badge.svg)](https://codecov.io/gh/ayonious/nested-rules-engine)
-[![npm version](https://badge.fury.io/js/nested-rules-engine.svg)](https://badge.fury.io/js/nested-rules-engine)
-[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fayonious%2Fnested-rules-engine.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2Fayonious%2Fnested-rules-engine?ref=badge_shield)
-[![dependencies Status](https://david-dm.org/ayonious/nested-rules-engine/status.svg)](https://david-dm.org/ayonious/nested-rules-engine)
-[![devDependencies Status](https://david-dm.org/ayonious/nested-rules-engine/dev-status.svg)](https://david-dm.org/ayonious/nested-rules-engine?type=dev)
+<h1 align="center">nested-rules-engine</h1>
+<h3 align="center">🌲Decision Tree based Rules Engine</h3>
+<p align="center">
+  <a href="https://travis-ci.org/ayonious/nested-rules-engine">
+    <img alt="Build Status" src="https://travis-ci.org/ayonious/nested-rules-engine.svg?branch=master">
+  </a>
+  <a href="https://codecov.io/gh/ayonious/nested-rules-engine">
+    <img alt="codecov" src="https://codecov.io/gh/ayonious/nested-rules-engine/branch/master/graph/badge.svg">
+  </a>
+  <a href="https://badge.fury.io/js/nested-rules-engine">
+    <img alt="npm version" src="https://badge.fury.io/js/nested-rules-engine.svg">
+  </a>
+  <a href="https://packagephobia.now.sh/result?p=nested-rules-engine">
+    <img alt="install size" src="https://packagephobia.now.sh/badge?p=nested-rules-engine@latest">
+  </a>
+</p>
+<p align="center">
+  <a href="https://david-dm.org/ayonious/nested-rules-engine">
+    <img alt="dependencies Status" src="https://david-dm.org/ayonious/nested-rules-engine/status.svg">
+  </a>
+  <a href="https://david-dm.org/ayonious/nested-rules-engine?type=dev">
+    <img alt="devDependencies Status" src="https://david-dm.org/ayonious/nested-rules-engine/dev-status.svg">
+  </a>
+</p>
 
 ## Synopsis
 A simple Decision tree based Rule Engine described using json files. Rules are executed according to decision tree. Create a set of rules (make them nested as you like) and based on set of inputs run the rules.
