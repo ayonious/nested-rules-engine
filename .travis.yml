@@ -3,11 +3,12 @@ node_js:
 - stable
 - "--lts"
 before_script:
-  - npm run setup
-  - npm run build
+- npm run setup
+- npm run build
 deploy:
   provider: npm
   email: jaissatai6@gmail.com
+  skip_cleanup: true
   api_key:
     secure: bK50h+Iq6/3m+TgtWuuP3Yu38e3BTCIyJgIEaS/A1+7SbOelvoIaPbKWad33IW23uJkmWzcIoxK/6XpdE32UK01NXJN9Eo2ME2UW/ONMR2gi127TQZN3CemLV5KsZ26ifmczJvH16jZFCrPXBh7HH4sDar504O+XIrKBLQ+ffZh+cPf599pwaKbHsJ+WQu8IJQ17faT9XOQZS9RY7b2hmQBkEEMs8FYE/P/Jc/DJok9Qb61XBsPsecApMgRYCHANj3pVYTHgwppzt41y9bAYeBEHVs31DrAbsr0KBVUOhaMlSqyBg3t3mUJWT4nZSiufnOk68fG7pz4h58ZzDj8YeG+6/d48Pq20RHIyn7bxG/c7x4amknwXeS8F9LAsrIIsiGofNRViOkz3ms30Wrlb/pDXrJOXywAZxI1CstNxWzeUX4LzXKB1KGTkGMbgI4PGaMJJoF/LvRWNgHs6dDJjsvZfsnyBz5Fvjp9kjopmJJe+aBLWSZxA5U6W6HQeIlutUDKooxDQbk9yGXW87WfKHTMYTRrjNDdOzX31iKrJ9X2rJ04zoFNlnY+RZMz+Wv/NkNb9DqTnjdMhXZLZj3Hfi3KWpCboCVkhUIKOHInI/xkXGOU+58uvbhnf8F2i+2E18vqXQPGLIHI/YTuf0T0FjnSyJoqFkZzcci5Uci5S87s=
   on:
