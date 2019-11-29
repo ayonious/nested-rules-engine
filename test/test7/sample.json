@@ -17,7 +17,7 @@
                                 "you_are_a_human": {
                                   "you_are_a_human": {
                                     "you_are_a_human": {
-                                      "you_are_a_human":{
+                                      "you_are_a_human": {
                                         "you_are_a_human": {
                                           "you_are_a_human": {
                                             "you_are_a_human": {
@@ -53,7 +53,7 @@
                                             }
                                           }
                                         }
-                                      } 
+                                      }
                                     }
                                   }
                                 }
@@ -71,5 +71,5 @@
         }
       }
     }
-  } 
+  }
 }

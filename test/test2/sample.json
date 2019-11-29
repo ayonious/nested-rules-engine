@@ -1,14 +1,14 @@
 {
   "you_are_a_human": {
     "you_are_not_racist": {
-      "you_are_kind":{
+      "you_are_kind": {
         "you_are_older_than_15": "you_must_be_something"
       },
       "you_are_smart": {
         "you_live_near_my_house": {
           "you_like_people": "please_do_my_homework"
         }
-      } 
+      }
     }
   }
 }

@@ -1,4 +1,4 @@
-import { getAllNodesOfTree } from "./traverse";
+import { getAllNodesOfTree } from './traverse';
 
 export const isGoodInputs = (functions: any, tree: any) => {
   const all_elements: string[] = getAllNodesOfTree(tree);
@@ -6,8 +6,8 @@ export const isGoodInputs = (functions: any, tree: any) => {
 
   //Check if function
   for (var key of all_elements) {
-    if (typeof functions[key] !== "function") {
-      output[`${key}`] = "function Not found";
+    if (typeof functions[key] !== 'function') {
+      output[`${key}`] = 'function Not found';
     }
   }
 

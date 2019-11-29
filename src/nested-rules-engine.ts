@@ -1,5 +1,5 @@
-import { isGoodInputs } from "./input-checker";
-import { createErrorOutput, createOutput, Result } from "./output-formatter";
+import { isGoodInputs } from './input-checker';
+import { createErrorOutput, createOutput, Result } from './output-formatter';
 
 const singleTraverse = (
   inputs: any,
@@ -11,7 +11,7 @@ const singleTraverse = (
   let resCheckInputs = isGoodInputs(functions, tree);
   if (isGoodInputs(functions, tree) !== true) {
     return createErrorOutput({
-      inputCheckErrors: resCheckInputs
+      inputCheckErrors: resCheckInputs,
     });
   }
 
@@ -30,7 +30,7 @@ const singleTraverse = (
 
   const dfs = (current: any) => {
     //base case
-    if (typeof current !== "object") {
+    if (typeof current !== 'object') {
       getVerbose(`Executing Function ${current}`);
       output = createOutput(functions[current], inputs, verboseOutput);
       isResFound = true;
@@ -55,7 +55,7 @@ const singleTraverse = (
   if (isResFound) {
     return output;
   }
-  return createErrorOutput("Could not Hit Any Rules");
+  return createErrorOutput('Could not Hit Any Rules');
 };
 
 const multipleTraverse = (

@@ -1,6 +1,6 @@
 {
   "you_are_a_human": {
-    "find_out_age" : "dummy",
+    "find_out_age": "dummy",
     "you_are_old_enough": "buy_alcohol",
     "default": "buy_milk"
   }

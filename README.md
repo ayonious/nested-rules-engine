@@ -24,19 +24,23 @@
 </p>
 
 ## Synopsis
+
 A simple Decision tree based Rule Engine described using json files. Rules are executed according to decision tree. Create a set of rules (make them nested as you like) and based on set of inputs run the rules.
 
 ## Features
+
 1. Rules expressed in huaman readable JSON
 2. Create new set of inputs or change existing inputs as you traverse rules tree
 3. Do multiple executions or rules set
 
 ## Installation
+
 ```
 npm install nested-rules-engine --save
 ```
 
 ## Basic Example
+
 ```
 const {executeEngine} = require('nested-rules-engine');
 
@@ -76,46 +80,50 @@ const functions = {
 const res = executeEngine(inputs, functions, rules);
 
 // Output res:
-/* 
-{ 
+/*
+{
   result: { payload: 'doing homework', effort: 'im getting sick' },
-  logs: [] 
+  logs: []
 }
 */
 ```
 
-
 ## Documentation
-Engine Execution Signature: 
+
+Engine Execution Signature:
+
 ```
 executeEngine(variables, functions, rules, options);
 ```
 
-### Inputs 
+### Inputs
 
-* `variables`  Collection of values on which rule engine will execute
-You can change these collection of variables (Add/Edit/Delte them) as you traverse the decision tree of rules.
+- `variables` Collection of values on which rule engine will execute
+  You can change these collection of variables (Add/Edit/Delte them) as you traverse the decision tree of rules.
 
-* `functions`  Collection of functions that decide which way the tree should be traversed.
+- `functions` Collection of functions that decide which way the tree should be traversed.
 
-    * In case the function indicates a final decision in tree (leaf of decision tree): Output can be anything that you want to see as `result`
-    * In case the function is makes an intermediate decision (branch of decision tree): 
-        * if output is `true`: this means this branch should be traversed
-        * else: the function will be executed
+  - In case the function indicates a final decision in tree (leaf of decision tree): Output can be anything that you want to see as `result`
+  - In case the function is makes an intermediate decision (branch of decision tree):
+    - if output is `true`: this means this branch should be traversed
+    - else: the function will be executed
 
-* `rules`  Decision Tree that will be traversed by this Rule Engine
+- `rules` Decision Tree that will be traversed by this Rule Engine
 
-* `options` there are different options that you can provide to customize the execution nature
-    * verbose (boolean): Makes Sure you get enough logs while engine goes through all decision tree
-    * multiple (boolean): You can run multiple Decision Trees based on same inputs. Input sets are shared between each tree
+- `options` there are different options that you can provide to customize the execution nature
+  - verbose (boolean): Makes Sure you get enough logs while engine goes through all decision tree
+  - multiple (boolean): You can run multiple Decision Trees based on same inputs. Input sets are shared between each tree
 
 ### Outputs
-* `result`: Result of the engine execution. format of Result will be defined by you through `functions`
-* `logs`: Detailed logs while engine got executed (by default its disabled)
+
+- `result`: Result of the engine execution. format of Result will be defined by you through `functions`
+- `logs`: Detailed logs while engine got executed (by default its disabled)
 
 ## Hard Examples
-1. Example with verbose output, multiple executions [Find Here] (https://github.com/ayonious/nested-rules-engine/blob/master/test/multirun-verbose-example.js)
-2. Example with Creating new set of inputs while engine is executing [Find Here] (https://github.com/ayonious/nested-rules-engine/blob/master/test/change-variables-example.js)
+
+1. Example with verbose output, multiple executions [Find Here](https://github.com/ayonious/nested-rules-engine/blob/master/test/multirun-verbose-example.js)
+2. Example with Creating new set of inputs while engine is executing [Find Here](https://github.com/ayonious/nested-rules-engine/blob/master/test/change-variables-example.js)
 
 ## License
+
 [MIT](https://github.com/ayonious/nested-rules-engine/blob/master/LICENSE)

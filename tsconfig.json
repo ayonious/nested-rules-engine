@@ -10,7 +10,7 @@
     "strict": true,
     "types": ["jest"],
     "resolveJsonModule": true,
-    "esModuleInterop": true,
+    "esModuleInterop": true
   },
   "include": ["src/**/*", "index.ts"]
 }
