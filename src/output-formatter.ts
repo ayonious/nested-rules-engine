@@ -6,7 +6,7 @@ export type Result = {
 const createReturnDto = (result: any, logs: any): Result => {
   return {
     result: result,
-    logs: logs
+    logs: logs,
   };
 };
 

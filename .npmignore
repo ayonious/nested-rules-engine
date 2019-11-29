@@ -75,3 +75,6 @@ renovate.json
 .travis.yml
 src
 index.ts
+.huskyrc.json
+.prettierrc
+.prettierignore

@@ -1,5 +1,5 @@
 const isLeaf = (tree: any) => {
-  return typeof tree !== "object";
+  return typeof tree !== 'object';
 };
 
 export const getAllNodesOfTree = (tree: any): string[] => {
