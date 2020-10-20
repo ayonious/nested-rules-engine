@@ -1,6 +1,6 @@
 {
   "name": "nested-rules-engine",
-  "version": "1.1.127",
+  "version": "1.1.128",
   "repository": "github:ayonious/nested-rules-engine",
   "description": "Nested Conditional Rules Engine",
   "main": "dist/index.js",
@@ -17,7 +17,7 @@
   "author": "Nahiyan Kamal",
   "license": "MIT",
   "devDependencies": {
-    "@types/jest": "^26.0.14",
+    "@types/jest": "^26.0.15",
     "husky": "^4.3.0",
     "jest": "^26.6.0",
     "prettier": "^2.1.2",
