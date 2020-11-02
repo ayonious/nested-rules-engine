@@ -1,6 +1,6 @@
 {
   "name": "nested-rules-engine",
-  "version": "1.1.132",
+  "version": "1.1.133",
   "repository": "github:ayonious/nested-rules-engine",
   "description": "Nested Conditional Rules Engine",
   "main": "dist/index.js",
@@ -19,7 +19,7 @@
   "devDependencies": {
     "@types/jest": "^26.0.15",
     "husky": "^4.3.0",
-    "jest": "^26.6.1",
+    "jest": "^26.6.2",
     "prettier": "^2.1.2",
     "pretty-quick": "^3.1.0",
     "ts-jest": "^26.4.3",
