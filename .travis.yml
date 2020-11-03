@@ -8,7 +8,7 @@ before_script:
 deploy:
   provider: script
   edge: true
-  cleanup: true
+  cleanup: false
   script:
     - npx semantic-release
   on:
