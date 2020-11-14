@@ -1,8 +1,8 @@
 <h1 align="center">nested-rules-engine</h1>
 <h3 align="center">🌲Decision Tree based Rules Engine</h3>
 <p align="center">
-  <a href="https://travis-ci.org/ayonious/nested-rules-engine">
-    <img alt="Build Status" src="https://travis-ci.org/ayonious/nested-rules-engine.svg?branch=master">
+  <a href="https://travis-ci.com/ayonious/nested-rules-engine">
+    <img alt="Build Status" src="https://travis-ci.com/ayonious/nested-rules-engine.svg?branch=master">
   </a>
   <a href="https://codecov.io/gh/ayonious/nested-rules-engine">
     <img alt="codecov" src="https://codecov.io/gh/ayonious/nested-rules-engine/branch/master/graph/badge.svg">
