@@ -1,6 +1,6 @@
 {
   "name": "nested-rules-engine",
-  "version": "0.0.1",
+  "version": "0.0.0",
   "repository": "github:ayonious/nested-rules-engine",
   "description": "Nested Conditional Rules Engine",
   "main": "dist/index.js",
