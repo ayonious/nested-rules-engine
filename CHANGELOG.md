@@ -1,3 +1,10 @@
+## [1.1.139](https://github.com/ayonious/nested-rules-engine/compare/v1.1.138...v1.1.139) (2021-03-06)
+
+
+### Bug Fixes
+
+* remove travis ([5f8813f](https://github.com/ayonious/nested-rules-engine/commit/5f8813ff41c5e4d2e00d26e340fe98546020e6b3))
+
 ## [1.1.138](https://github.com/ayonious/nested-rules-engine/compare/v1.1.137...v1.1.138) (2020-11-03)
 
 
