@@ -1,3 +1,10 @@
+## [1.1.140](https://github.com/ayonious/nested-rules-engine/compare/v1.1.139...v1.1.140) (2021-03-06)
+
+
+### Bug Fixes
+
+* fixing readme ([59a2e3b](https://github.com/ayonious/nested-rules-engine/commit/59a2e3bd972730bec881fb3d2c447388ba7ab532))
+
 ## [1.1.139](https://github.com/ayonious/nested-rules-engine/compare/v1.1.138...v1.1.139) (2021-03-06)
 
 
