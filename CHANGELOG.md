@@ -1,3 +1,10 @@
+## [1.1.141](https://github.com/ayonious/nested-rules-engine/compare/v1.1.140...v1.1.141) (2021-04-18)
+
+
+### Bug Fixes
+
+* **deps:** Updating all deps ([e59d265](https://github.com/ayonious/nested-rules-engine/commit/e59d26566c5329ff331aee3aeabe115f13d3ca7f))
+
 ## [1.1.140](https://github.com/ayonious/nested-rules-engine/compare/v1.1.139...v1.1.140) (2021-03-06)
 
 
