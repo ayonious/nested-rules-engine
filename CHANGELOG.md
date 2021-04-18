@@ -1,3 +1,10 @@
+## [1.1.142](https://github.com/ayonious/nested-rules-engine/compare/v1.1.141...v1.1.142) (2021-04-18)
+
+
+### Bug Fixes
+
+* **deps:** remove npm ([fcc225c](https://github.com/ayonious/nested-rules-engine/commit/fcc225c284310a1ebafb22cea93be76aa6157469))
+
 ## [1.1.141](https://github.com/ayonious/nested-rules-engine/compare/v1.1.140...v1.1.141) (2021-04-18)
 
 
