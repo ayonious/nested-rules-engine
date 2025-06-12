@@ -4,7 +4,7 @@ import { functions } from './test2/functions';
 import inputs from './test2/inputs.json';
 
 describe('Test2: Simplest serial test should pass', () => {
-  it(`serial traverse should work`, function() {
+  it(`serial traverse should work`, function () {
     const res = executeEngine(inputs, functions, rules);
     const serialExpectedOutput = {
       result: {
@@ -16,7 +16,7 @@ describe('Test2: Simplest serial test should pass', () => {
     expect(res).toStrictEqual(serialExpectedOutput);
   });
 
-  it(`serial traverse should work with verbose output`, function() {
+  it(`serial traverse should work with verbose output`, function () {
     const options = {
       verbose: true,
     };

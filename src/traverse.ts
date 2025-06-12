@@ -3,14 +3,14 @@ const isLeaf = (tree: any) => {
 };
 
 export const getAllNodesOfTree = (tree: any): string[] => {
-  let output: string[] = [];
+  const output: string[] = [];
 
   const dfs = (current: any) => {
     if (isLeaf(current)) {
       output.push(`${current}`);
       return;
     }
-    for (var key in current) {
+    for (const key in current) {
       output.push(`${key}`);
       dfs(current[key]);
     }

@@ -1,7 +1,7 @@
 import { executeEngine } from '../src/nested-rules-engine';
 
 describe('Simple Example', () => {
-  it(`is working`, function() {
+  it(`is working`, function () {
     // Step1: Define your conditional rules
     const rules = {
       you_are_a_human: {

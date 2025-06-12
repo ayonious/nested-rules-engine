@@ -4,7 +4,7 @@ import { functions } from './test4/functions';
 import inputs from './test4/inputs.json';
 
 describe('Basic Checks are working', () => {
-  it(`Test4: Missing Functions should be caught`, function() {
+  it(`Test4: Missing Functions should be caught`, function () {
     const res = executeEngine(inputs, functions, rules);
     const serialExpectedOutput = {
       result: null,

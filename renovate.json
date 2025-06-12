@@ -5,9 +5,9 @@
   "groupSlug": "all",
   "packageRules": [
     {
-      "packagePatterns": [ "*" ],
+      "packagePatterns": ["*"],
       "groupName": "all dependencies",
-      "groupSlug": "all"    
+      "groupSlug": "all"
     }
   ],
   "rangeStrategy": "bump",

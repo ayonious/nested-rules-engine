@@ -8,7 +8,7 @@ const singleTraverse = (
   options: any
 ): Result => {
   // Check input validity
-  let resCheckInputs = isGoodInputs(functions, tree);
+  const resCheckInputs = isGoodInputs(functions, tree);
   if (isGoodInputs(functions, tree) !== true) {
     return createErrorOutput({
       inputCheckErrors: resCheckInputs,
@@ -16,8 +16,8 @@ const singleTraverse = (
   }
 
   // prepare variables for verbose inputs
-  let isVerbose = options && options.verbose === true;
-  let verboseOutput: string[] = [];
+  const isVerbose = options && options.verbose === true;
+  const verboseOutput: string[] = [];
 
   const getVerbose = (text: string) => {
     if (isVerbose) {
@@ -37,7 +37,7 @@ const singleTraverse = (
       return true;
     }
 
-    for (var key in current) {
+    for (const key in current) {
       getVerbose(`Executing Function ${key}`);
       const thisRes = functions[key](inputs);
       getVerbose(`Result of Function ${key} is ${thisRes}`);
@@ -64,8 +64,8 @@ const multipleTraverse = (
   trees: any,
   options: any
 ): Result[] => {
-  let res: Result[] = [];
-  for (let tree of trees) {
+  const res: Result[] = [];
+  for (const tree of trees) {
     res.push(singleTraverse(inputs, functions, tree, options));
   }
   return res;

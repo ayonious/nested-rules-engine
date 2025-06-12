@@ -4,7 +4,7 @@ import { functions } from './test1/functions';
 import inputs from './test1/inputs.json';
 
 describe('Test1: Simplest parallel test should pass', () => {
-  it(`parallel traverse should work`, function() {
+  it(`parallel traverse should work`, function () {
     const options = {
       multiple: true,
       verbose: false,
@@ -29,7 +29,7 @@ describe('Test1: Simplest parallel test should pass', () => {
     ]);
   });
 
-  it(`parallel traverse should work with verbose output`, function() {
+  it(`parallel traverse should work with verbose output`, function () {
     const options = {
       multiple: true,
       verbose: true,

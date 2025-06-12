@@ -4,7 +4,7 @@ import { functions } from './test3/functions';
 import inputs from './test3/inputs.json';
 
 describe('Test3: Non False return functions can work', () => {
-  it(`Should have output`, function() {
+  it(`Should have output`, function () {
     const res = executeEngine(inputs, functions, rules);
     const serialExpectedOutput = {
       result: {
