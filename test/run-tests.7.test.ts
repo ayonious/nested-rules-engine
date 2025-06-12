@@ -4,7 +4,7 @@ import { functions } from './test7/functions';
 import inputs from './test7/inputs.json';
 
 describe('Test7: Very Nested test', () => {
-  it(`Should pass`, function() {
+  it(`Should pass`, function () {
     const res = executeEngine(inputs, functions, rules);
     const serialExpectedOutput = {
       result: {

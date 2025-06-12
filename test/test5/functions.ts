@@ -2,7 +2,7 @@ export const functions = {
   you_are_a_human: ({ type }) => {
     return type === 'human';
   },
-  find_out_age: inputs => {
+  find_out_age: (inputs) => {
     const { ageType } = inputs;
     let age;
     if (ageType === 'adult') {

@@ -1,7 +1,7 @@
 import { executeEngine } from '../src/nested-rules-engine';
 
 describe('Advanced Example: Change variables while engine Execution', () => {
-  it(`is working`, function() {
+  it(`is working`, function () {
     // Step1: Define your conditional rules
     const rules = {
       the_cup_is_not_empty: {
@@ -27,7 +27,7 @@ describe('Advanced Example: Change variables while engine Execution', () => {
         payload: 'going home',
         effort: `im getting sick because I drank in total ${waterInBelly} glasses of water`,
       }),
-      drink_water: inputs => {
+      drink_water: (inputs) => {
         inputs.waterLevelinCup = Math.max(0, inputs.waterLevelinCup - 5);
         inputs.waterInBelly += 5;
         return false; // always return false for functions that change the main input variables

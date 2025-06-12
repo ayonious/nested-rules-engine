@@ -1,7 +1,7 @@
 import { executeEngine } from '../src/nested-rules-engine';
 
 describe('Advanced Example: Multi Execution and verbose output', () => {
-  it(`is working`, function() {
+  it(`is working`, function () {
     // Step1: Define your conditional rules
     // here there are 2 set of rules as array, both of them will be run on same set of rules,variables,functions
     const rules = [

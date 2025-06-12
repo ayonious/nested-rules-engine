@@ -4,7 +4,7 @@ import { functions } from './test6/functions';
 import inputs from './test6/inputs.json';
 
 describe('Test6: Simplest Test is passing', () => {
-  it(`Smallest 1 liner test`, function() {
+  it(`Smallest 1 liner test`, function () {
     const res = executeEngine(inputs, functions, rules);
     const serialExpectedOutput = {
       result: {
