@@ -1,9 +1,6 @@
 <h1 align="center">nested-rules-engine</h1>
 <h3 align="center">🌲Decision Tree based Rules Engine</h3>
 <p align="center">
-  <a href="https://circleci.com/gh/ayonious/nested-rules-engine">
-    <img alt="CircleCI" src="https://circleci.com/gh/ayonious/nested-rules-engine.svg?style=svg">
-  </a>
   <a href="https://codecov.io/gh/ayonious/nested-rules-engine">
     <img alt="codecov" src="https://codecov.io/gh/ayonious/nested-rules-engine/branch/master/graph/badge.svg">
   </a>
