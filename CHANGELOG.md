@@ -1,3 +1,11 @@
+## [1.1.143](https://github.com/ayonious/nested-rules-engine/compare/v1.1.142...v1.1.143) (2025-06-12)
+
+
+### Bug Fixes
+
+* Better readme ([6947f03](https://github.com/ayonious/nested-rules-engine/commit/6947f0348afd8aa8c584e9c810af4ede3806be80))
+* **tech:** package version set to 0 ([e2c300f](https://github.com/ayonious/nested-rules-engine/commit/e2c300f3d83d093f74da1c031f789baedb4146a4))
+
 ## [1.1.142](https://github.com/ayonious/nested-rules-engine/compare/v1.1.141...v1.1.142) (2021-04-18)
 
 
