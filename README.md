@@ -41,57 +41,6 @@ yarn add nested-rules-engine
 
 ## Basic Example
 
-### JavaScript
-
-```javascript
-const { executeEngine } = require('nested-rules-engine');
-
-// Step1: Define your conditional rules
-const rules = {
-  "you_are_a_human": {
-    "you_are_kind": "help_me_find_my_book",
-    "you_are_smart": "please_do_my_homework",
-  },
-  "default": "please_do_my_homework"
-};
-
-// Step2: make set of inputs collection
-const inputs = {
-  "type": "human",
-  "kindnessLevel": 0,
-  "intelligence": 10
-};
-
-// Step3: Make your custom Functions
-const functions = {
-  default: () => true,
-  you_are_a_human: ({type}) => type === 'human',
-  you_are_kind: ({kindnessLevel}) => kindnessLevel > 300,
-  you_are_smart: ({intelligence}) => intelligence > 5,
-  help_me_find_my_book: () => ({
-    payload: 'lets help someone',
-    effort: 'finding the book'
-  }),
-  please_do_my_homework: () => ({
-    payload: 'doing homework',
-    effort: 'im getting sick'
-  })
-};
-
-// Step4: Execute Engine
-const res = executeEngine(inputs, functions, rules);
-
-// Output res:
-/*
-{
-  result: { payload: 'doing homework', effort: 'im getting sick' },
-  logs: []
-}
-*/
-```
-
-### TypeScript
-
 ```typescript
 import { executeEngine } from 'nested-rules-engine';
 
@@ -108,38 +57,46 @@ interface Result {
 
 // Step1: Define your conditional rules
 const rules = {
-  "you_are_a_human": {
-    "you_are_kind": "help_me_find_my_book",
-    "you_are_smart": "please_do_my_homework",
+  you_are_a_human: {
+    you_are_kind: 'help_me_find_my_book',
+    you_are_smart: 'please_do_my_homework',
   },
-  "default": "please_do_my_homework"
+  default: 'please_do_my_homework',
 } as const;
 
 // Step2: make set of inputs collection
 const inputs: Inputs = {
-  type: "human",
+  type: 'human',
   kindnessLevel: 0,
-  intelligence: 10
+  intelligence: 10,
 };
 
 // Step3: Make your custom Functions
 const functions = {
   default: () => true,
-  you_are_a_human: ({type}: Inputs) => type === 'human',
-  you_are_kind: ({kindnessLevel}: Inputs) => kindnessLevel > 300,
-  you_are_smart: ({intelligence}: Inputs) => intelligence > 5,
+  you_are_a_human: ({ type }: Inputs) => type === 'human',
+  you_are_kind: ({ kindnessLevel }: Inputs) => kindnessLevel > 300,
+  you_are_smart: ({ intelligence }: Inputs) => intelligence > 5,
   help_me_find_my_book: (): Result => ({
     payload: 'lets help someone',
-    effort: 'finding the book'
+    effort: 'finding the book',
   }),
   please_do_my_homework: (): Result => ({
     payload: 'doing homework',
-    effort: 'im getting sick'
-  })
+    effort: 'im getting sick',
+  }),
 };
 
 // Step4: Execute Engine
 const res = executeEngine(inputs, functions, rules);
+
+// Output res:
+/*
+{
+  result: { payload: 'doing homework', effort: 'im getting sick' },
+  logs: []
+}
+*/
 ```
 
 ## Documentation
@@ -156,6 +113,7 @@ executeEngine(variables: Record<string, any>, functions: Record<string, Function
   You can change these collection of variables (Add/Edit/Delete them) as you traverse the decision tree of rules.
 
 - `functions` Collection of functions that decide which way the tree should be traversed.
+
   - In case the function indicates a final decision in tree (leaf of decision tree): Output can be anything that you want to see as `result`
   - In case the function makes an intermediate decision (branch of decision tree):
     - if output is `true`: this means this branch should be traversed
