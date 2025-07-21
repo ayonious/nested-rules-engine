@@ -1,5 +1,5 @@
-import { executeEngine } from '../dist/index';
-import * as nestedRulesEngine from '../dist/index';
+import { executeEngine } from '..';
+import * as nestedRulesEngine from '..';
 
 describe('Import Styles', () => {
   const testRules = {
