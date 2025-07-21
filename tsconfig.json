@@ -4,14 +4,22 @@
     "target": "es2017",
     "noImplicitAny": false,
     "strictNullChecks": true,
-    "module": "commonjs",
+    "module": "es2020",
     "declaration": true,
     "lib": ["es2017"],
     "strict": true,
     "types": ["jest"],
     "resolveJsonModule": true,
-    "esModuleInterop": true
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "moduleResolution": "node"
   },
   "include": ["src/**/*", "index.ts"],
-  "exclude": ["test/**/*", "**/*.test.ts", "**/*.spec.ts", "dist/**/*", "node_modules/**/*"]
+  "exclude": [
+    "test/**/*",
+    "**/*.test.ts",
+    "**/*.spec.ts",
+    "dist/**/*",
+    "node_modules/**/*"
+  ]
 }
