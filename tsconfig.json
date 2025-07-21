@@ -12,5 +12,6 @@
     "resolveJsonModule": true,
     "esModuleInterop": true
   },
-  "include": ["src/**/*", "index.ts"]
+  "include": ["src/**/*", "index.ts"],
+  "exclude": ["test/**/*", "**/*.test.ts", "**/*.spec.ts", "dist/**/*", "node_modules/**/*"]
 }

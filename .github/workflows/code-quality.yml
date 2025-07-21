@@ -2,32 +2,32 @@ name: Code Quality
 
 on:
   pull_request:
-    branches: [ master ]
+    branches: [master]
   push:
-    branches: [ master ]
+    branches: [master]
 
 jobs:
   lint:
     name: Lint and Format Check
     runs-on: ubuntu-latest
-    
+
     steps:
-    - uses: actions/checkout@v4
-    
-    - name: Use Node.js
-      uses: actions/setup-node@v4
-      with:
-        node-version: '20.x'
-        cache: 'yarn'
-        
-    - name: Install dependencies
-      run: yarn install --frozen-lockfile
-      
-    - name: Check formatting
-      run: yarn format --check
-      
-    - name: Run ESLint
-      run: yarn lint
-      
-    - name: Type check
-      run: yarn tsc --noEmit 
+      - uses: actions/checkout@v4
+
+      - name: Use Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20.x'
+          cache: 'yarn'
+
+      - name: Install dependencies
+        run: yarn install --frozen-lockfile
+
+      - name: Check formatting
+        run: yarn format --check
+
+      - name: Run ESLint
+        run: yarn lint
+
+      - name: Type check
+        run: yarn tsc --noEmit
