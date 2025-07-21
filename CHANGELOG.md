@@ -1,3 +1,10 @@
+## [1.2.1](https://github.com/ayonious/nested-rules-engine/compare/v1.2.0...v1.2.1) (2025-07-21)
+
+
+### Bug Fixes
+
+* module es2020 only, remove commonjs ([#205](https://github.com/ayonious/nested-rules-engine/issues/205)) ([d9cf70b](https://github.com/ayonious/nested-rules-engine/commit/d9cf70bfc786dd1cbf55698ffe2ac9d9c7c79f1f))
+
 # [1.2.0](https://github.com/ayonious/nested-rules-engine/compare/v1.1.143...v1.2.0) (2025-07-21)
 
 
