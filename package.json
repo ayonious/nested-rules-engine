@@ -16,7 +16,7 @@
   "scripts": {
     "setup": "npm install",
     "build": "tsc",
-    "format": "prettier --write \"**/*.{json,md,ts,tsx,yml,js,jsx}\"",
+    "format": "prettier --write \"**/*.{json,ts,tsx,yml,js,jsx}\"",
     "lint": "eslint . --ext .ts,.tsx",
     "lint:fix": "eslint . --ext .ts,.tsx --fix",
     "test": "jest --config jestconfig.json",
