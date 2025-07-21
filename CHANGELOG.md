@@ -1,3 +1,10 @@
+# [1.2.0](https://github.com/ayonious/nested-rules-engine/compare/v1.1.143...v1.2.0) (2025-07-21)
+
+
+### Features
+
+* support ESmodule and CommonJS both ([#204](https://github.com/ayonious/nested-rules-engine/issues/204)) ([b383f81](https://github.com/ayonious/nested-rules-engine/commit/b383f81ec05592f28f33eb9dc8dd3dc75095798c))
+
 ## [1.1.143](https://github.com/ayonious/nested-rules-engine/compare/v1.1.142...v1.1.143) (2025-06-12)
 
 
