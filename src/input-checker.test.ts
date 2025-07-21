@@ -1,4 +1,4 @@
-import { isGoodInputs } from '../src/input-checker';
+import { isGoodInputs } from './input-checker';
 
 describe('Input Checker', () => {
   it('should return true when all functions are defined', () => {

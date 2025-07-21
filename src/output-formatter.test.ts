@@ -1,4 +1,4 @@
-import { createOutput, createErrorOutput } from '../src/output-formatter';
+import { createOutput, createErrorOutput } from './output-formatter';
 
 describe('Output Formatter', () => {
   describe('createOutput', () => {

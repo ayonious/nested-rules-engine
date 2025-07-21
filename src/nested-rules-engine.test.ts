@@ -1,5 +1,5 @@
-import { executeEngine } from '../src/nested-rules-engine';
-import { Result } from '../src/output-formatter';
+import { executeEngine } from './nested-rules-engine';
+import { Result } from './output-formatter';
 
 describe('Nested Rules Engine', () => {
   describe('Single Traverse', () => {
