@@ -12,7 +12,6 @@
     "resolveJsonModule": true,
     "strict": true,
     "types": ["node", "jest"],
-    "inlineSources": true,
     "allowSyntheticDefaultImports": true
   },
   "include": ["src/**/*"],
