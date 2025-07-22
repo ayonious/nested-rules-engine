@@ -10,7 +10,6 @@
     "declaration": true,
     "moduleResolution": "node",
     "resolveJsonModule": true,
-    "sourceMap": true,
     "strict": true,
     "types": ["node", "jest"],
     "inlineSources": true,
