@@ -6,22 +6,22 @@
   "compilerOptions": {
     // Output directory for ES modules build
     "outDir": "dist/esm",
-    
+
     // Module System: Generate ES2020 modules (import/export + dynamic imports)
     // This creates: import { x } from 'module' and export const x = value
     // ES2020 includes dynamic imports: await import('./module')
     "module": "es2020",
-    
+
     // Target: ES2020 for modern JavaScript features
     // Includes optional chaining (obj?.prop), nullish coalescing (a ?? b), BigInt, etc.
     "target": "es2020",
-    
+
     // Don't generate .d.ts files in this build (handled by types build)
     "declaration": false,
     "declarationMap": false,
-    
+
     // Module Resolution: Standard Node.js resolution
     // Works with both ES modules and CommonJS packages
     "moduleResolution": "node"
   }
-} 
+}
