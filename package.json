@@ -3,15 +3,32 @@
   "version": "0.0.0",
   "repository": "github:ayonious/nested-rules-engine",
   "description": "Nested Conditional Rules Engine",
-  "main": "dist/index.js",
-  "types": "dist/index.d.ts",
+  "main": "./dist/cjs/index.js",
+  "module": "./dist/esm/index.js",
+  "types": "./dist/types/index.d.ts",
+  "exports": {
+    ".": {
+      "require": {
+        "types": "./dist/types/index.d.ts",
+        "default": "./dist/cjs/index.js"
+      },
+      "import": {
+        "types": "./dist/types/index.d.ts", 
+        "default": "./dist/esm/index.js"
+      },
+      "default": "./dist/esm/index.js"
+    }
+  },
   "scripts": {
     "setup": "npm install",
-    "build": "tsc",
-    "format": "prettier --write \"**/*.{json,ts,tsx,yml,js,jsx}\"",
+    "build": "npm run build:cjs && npm run build:esm && npm run build:types",
+    "build:cjs": "tsc --project tsconfig.cjs.json",
+    "build:esm": "tsc --project tsconfig.esm.json", 
+    "build:types": "tsc --project tsconfig.types.json",
+    "format": "prettier --write \"**/*.{json,md,ts,tsx,yml,js,jsx}\"",
     "lint": "eslint . --ext .ts,.tsx",
     "lint:fix": "eslint . --ext .ts,.tsx --fix",
-    "test": "jest --config jestconfig.json",
+    "test": "NODE_OPTIONS='--loader=ts-node/esm' jest --config jestconfig.json",
     "semantic-release": "semantic-release"
   },
   "files": [
@@ -34,6 +51,7 @@
     "pretty-quick": "^4.2.2",
     "semantic-release": "^24.2.5",
     "ts-jest": "^29.4.0",
+    "ts-node": "^10.9.1",
     "typescript": "^5.8.3"
   }
 }

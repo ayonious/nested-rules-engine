@@ -4,11 +4,27 @@
     "target": "es2017",
     "noImplicitAny": false,
     "strictNullChecks": true,
-    "module": "commonjs",
+    
+    // Module system: Controls how imports/exports are handled
+    // "node16" generates Node.js compatible ES modules with proper .js extensions
+    "module": "node16",
+    
+    // ES Module Interoperability: Enables better compatibility between CommonJS and ES modules
+    // Allows default imports from modules that don't have default exports
     "esModuleInterop": true,
+    
+    // Runtime Library: Defines which built-in JavaScript APIs are available
+    // ES2017 includes: async/await, Object.values/entries, String.padStart/padEnd, etc.
     "lib": ["es2017"],
+    
+    // Type Definitions: Generates .d.ts files for TypeScript consumers
+    // Essential for publishing packages that other TypeScript projects can use
     "declaration": true,
-    "moduleResolution": "node",
+    
+    // Module Resolution: How TypeScript finds imported modules
+    // "node16" required when module is "node16" - follows Node.js module resolution
+    "moduleResolution": "node16",
+    
     "resolveJsonModule": true,
     "strict": true,
     "types": ["node", "jest"],

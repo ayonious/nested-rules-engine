@@ -1,0 +1,26 @@
+{
+  // CommonJS Build Configuration
+  // This config generates traditional Node.js CommonJS modules using require/exports
+  // Output: dist/cjs/ - Compatible with older Node.js and traditional bundlers
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    // Output directory for CommonJS build
+    "outDir": "dist/cjs",
+    
+    // Module System: Generate CommonJS (require/exports) instead of ES modules
+    // This creates: const x = require('module') and exports.x = value
+    "module": "commonjs",
+    
+    // Module Resolution: Use classic Node.js resolution for CommonJS
+    // Required when module is "commonjs" - looks in node_modules, follows package.json
+    "moduleResolution": "node",
+    
+    // Target: ES2017 for broader compatibility with older Node.js versions
+    // Supports async/await, object spread, but transpiles newer features
+    "target": "es2017",
+    
+    // Don't generate .d.ts files in this build (handled by types build)
+    "declaration": false,
+    "declarationMap": false
+  }
+} 
