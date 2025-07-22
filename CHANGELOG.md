@@ -1,3 +1,10 @@
+## [1.2.2](https://github.com/ayonious/nested-rules-engine/compare/v1.2.1...v1.2.2) (2025-07-22)
+
+
+### Bug Fixes
+
+* fix commonjs export problem ([#206](https://github.com/ayonious/nested-rules-engine/issues/206)) ([74a16c2](https://github.com/ayonious/nested-rules-engine/commit/74a16c27c257ca12bcf10fef859a5dac2739cf14))
+
 ## [1.2.1](https://github.com/ayonious/nested-rules-engine/compare/v1.2.0...v1.2.1) (2025-07-21)
 
 
