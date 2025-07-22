@@ -1,3 +1,10 @@
+## [1.2.6](https://github.com/ayonious/nested-rules-engine/compare/v1.2.5...v1.2.6) (2025-07-22)
+
+
+### Bug Fixes
+
+* Support ES2020 only ([123e230](https://github.com/ayonious/nested-rules-engine/commit/123e230e7ba9ad93831ce902003dd4e68be3e662))
+
 ## [1.2.5](https://github.com/ayonious/nested-rules-engine/compare/v1.2.4...v1.2.5) (2025-07-22)
 
 
