@@ -1,3 +1,10 @@
+## [1.2.3](https://github.com/ayonious/nested-rules-engine/compare/v1.2.2...v1.2.3) (2025-07-22)
+
+
+### Bug Fixes
+
+* try fixing import problem ([0b40d33](https://github.com/ayonious/nested-rules-engine/commit/0b40d33c876f26a1994f624a3158a061ad300ca5))
+
 ## [1.2.2](https://github.com/ayonious/nested-rules-engine/compare/v1.2.1...v1.2.2) (2025-07-22)
 
 
