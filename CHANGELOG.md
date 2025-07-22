@@ -1,3 +1,10 @@
+## [1.2.5](https://github.com/ayonious/nested-rules-engine/compare/v1.2.4...v1.2.5) (2025-07-22)
+
+
+### Bug Fixes
+
+* allows both cjs and esm ([86d3eda](https://github.com/ayonious/nested-rules-engine/commit/86d3edafb2a67d4aa0c5f030ac796d8dac2bf62c))
+
 ## [1.2.4](https://github.com/ayonious/nested-rules-engine/compare/v1.2.3...v1.2.4) (2025-07-22)
 
 
