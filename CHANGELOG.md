@@ -1,3 +1,11 @@
+## [1.2.4](https://github.com/ayonious/nested-rules-engine/compare/v1.2.3...v1.2.4) (2025-07-22)
+
+
+### Bug Fixes
+
+* no inline sources tsconfig ([d26fe6c](https://github.com/ayonious/nested-rules-engine/commit/d26fe6c2a95263384abaaa31c3be3325e5750d89))
+* no source maps ([0221936](https://github.com/ayonious/nested-rules-engine/commit/02219365fc18238226ffc1d7105364b1d4d289b0))
+
 ## [1.2.3](https://github.com/ayonious/nested-rules-engine/compare/v1.2.2...v1.2.3) (2025-07-22)
 
 
