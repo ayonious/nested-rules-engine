@@ -4,6 +4,9 @@ on:
   push:
     branches: [master]
 
+permissions:
+  id-token: write  # Required for OIDC in NPM
+
 jobs:
   release:
     name: Release
