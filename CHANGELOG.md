@@ -1,3 +1,13 @@
+## [1.2.7](https://github.com/ayonious/nested-rules-engine/compare/v1.2.6...v1.2.7) (2026-06-04)
+
+
+### Bug Fixes
+
+* fix release ([23cb69d](https://github.com/ayonious/nested-rules-engine/commit/23cb69d98f584792a8639d9175d523192dbdb83b))
+* relase fix ([9d1cc7b](https://github.com/ayonious/nested-rules-engine/commit/9d1cc7b1257cb1a6107ffa9a17ef60921901f56b))
+* semantic release fix ([2af992e](https://github.com/ayonious/nested-rules-engine/commit/2af992e0ce66b5728111600b6dc78c33435902af))
+* Update readme ([1838b8b](https://github.com/ayonious/nested-rules-engine/commit/1838b8b9a3a86e6aba6f846022332f18412324f7))
+
 ## [1.2.6](https://github.com/ayonious/nested-rules-engine/compare/v1.2.5...v1.2.6) (2025-07-22)
 
 
