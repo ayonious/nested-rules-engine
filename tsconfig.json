@@ -1,5 +1,6 @@
 {
   "compilerOptions": {
+    "rootDir": "src",
     "outDir": "dist",
     "target": "es2017",
     "noImplicitAny": true,
@@ -11,6 +12,6 @@
     "types": ["jest", "node"],
     "esModuleInterop": true
   },
-  "include": ["src/**/*", "index.ts"],
+  "include": ["src/**/*"],
   "exclude": ["**/*.spec.ts", "**/*.test.ts", "**/__tests__/**", "**/test/**"]
 }
