@@ -1,6 +1,6 @@
 # nested-rules-engine
 
-<h3 align="center">🌲Decision Tree based Rules Engine</h3>
+<h3 align="center">Decision-tree based rules engine</h3>
 <p align="center">
   <a href="https://codecov.io/gh/ayonious/nested-rules-engine">
     <img alt="codecov" src="https://codecov.io/gh/ayonious/nested-rules-engine/branch/master/graph/badge.svg">
@@ -23,13 +23,22 @@
 
 ## Synopsis
 
-A simple Decision tree based Rule Engine described using json files. Rules are executed according to decision tree. Create a set of rules (make them nested as you like) and based on set of inputs run the rules.
+`nested-rules-engine` runs a decision tree that you describe with plain JavaScript objects or JSON.
+
+You provide three things:
+
+1. `inputs`: the data you want to check.
+2. `rules`: the decision tree.
+3. `functions`: small functions that either choose a branch or return the final result.
+
+The engine walks the tree from top to bottom. When a condition function returns `true`, it follows that branch. When it reaches a leaf, it runs the matching result function.
 
 ## Features
 
-1. Rules expressed in human readable JSON
-2. Create new set of inputs or change existing inputs as you traverse rules tree
-3. Do multiple executions of rules set
+- Write rules as readable JSON-like objects.
+- Nest rules to model multi-step decisions.
+- Change the input object while the tree is running, if needed.
+- Run one tree or multiple trees against the same inputs.
 
 ## Installation
 
@@ -45,55 +54,46 @@ yarn add nested-rules-engine
 import { executeEngine } from 'nested-rules-engine';
 
 interface Inputs {
-  type: string;
-  kindnessLevel: number;
-  intelligence: number;
+  day: string;
+  weather: string;
 }
 
 interface Result {
-  payload: string;
-  effort: string;
+  plan: string;
 }
 
-// Step1: Define your conditional rules
+// 1. Describe the tree.
 const rules = {
-  you_are_a_human: {
-    you_are_kind: 'help_me_find_my_book',
-    you_are_smart: 'please_do_my_homework',
+  is_weekend: {
+    is_raining: 'stay_home',
+    default: 'go_outside',
   },
-  default: 'please_do_my_homework',
+  default: 'go_to_work',
 } as const;
 
-// Step2: make set of inputs collection
+// 2. Provide the input data.
 const inputs: Inputs = {
-  type: 'human',
-  kindnessLevel: 0,
-  intelligence: 10,
+  day: 'saturday',
+  weather: 'sunny',
 };
 
-// Step3: Make your custom Functions
+// 3. Add one function for every rule name and result name.
 const functions = {
   default: () => true,
-  you_are_a_human: ({ type }: Inputs) => type === 'human',
-  you_are_kind: ({ kindnessLevel }: Inputs) => kindnessLevel > 300,
-  you_are_smart: ({ intelligence }: Inputs) => intelligence > 5,
-  help_me_find_my_book: (): Result => ({
-    payload: 'lets help someone',
-    effort: 'finding the book',
-  }),
-  please_do_my_homework: (): Result => ({
-    payload: 'doing homework',
-    effort: 'im getting sick',
-  }),
+  is_weekend: ({ day }: Inputs) => day === 'saturday' || day === 'sunday',
+  is_raining: ({ weather }: Inputs) => weather === 'rainy',
+  stay_home: (): Result => ({ plan: 'Stay home' }),
+  go_outside: (): Result => ({ plan: 'Go outside' }),
+  go_to_work: (): Result => ({ plan: 'Go to work' }),
 };
 
-// Step4: Execute Engine
+// 4. Run the engine.
 const res = executeEngine(inputs, functions, rules);
 
-// Output res:
+// res is:
 /*
 {
-  result: { payload: 'doing homework', effort: 'im getting sick' },
+  result: { plan: 'Go outside' },
   logs: []
 }
 */
@@ -101,7 +101,7 @@ const res = executeEngine(inputs, functions, rules);
 
 ## Documentation
 
-Engine Execution Signature:
+Execution signature:
 
 ```typescript
 executeEngine(variables: Record<string, any>, functions: Record<string, Function>, rules: Record<string, any>, options?: Options);
@@ -109,31 +109,49 @@ executeEngine(variables: Record<string, any>, functions: Record<string, Function
 
 ### Inputs
 
-- `variables` Collection of values on which rule engine will execute.
-  You can change these collection of variables (Add/Edit/Delete them) as you traverse the decision tree of rules.
+- `variables`: the input object passed to every function.
+  Functions receive this object by reference, so they can add, edit, or delete values while the tree is running.
 
-- `functions` Collection of functions that decide which way the tree should be traversed.
+- `functions`: a function map. Every key used in `rules` must have a matching function.
 
-  - In case the function indicates a final decision in tree (leaf of decision tree): Output can be anything that you want to see as `result`
-  - In case the function makes an intermediate decision (branch of decision tree):
-    - if output is `true`: this means this branch should be traversed
-    - else: the function will be executed
+  - Branch functions should return `true` when the engine should follow that branch.
+  - Leaf functions return the final value you want in `result`.
 
-- `rules` Decision Tree that will be traversed by this Rule Engine
+- `rules`: the decision tree to run.
 
-- `options` there are different options that you can provide to customize the execution nature
-  - `verbose` (boolean): Makes Sure you get enough logs while engine goes through all decision tree
-  - `multiple` (boolean): You can run multiple Decision Trees based on same inputs. Input sets are shared between each tree
+- `options`: optional settings.
+  - `verbose` (`boolean`): include execution logs.
+  - `multiple` (`boolean`): run an array of decision trees against the same inputs.
 
 ### Outputs
 
-- `result`: Result of the engine execution. format of Result will be defined by you through `functions`
-- `logs`: Detailed logs while engine got executed (by default its disabled)
+- `result`: the value returned by the selected leaf function.
+- `logs`: execution logs. This is an empty array unless `verbose` is enabled, or an error object if validation fails.
+
+## How Defaults Work
+
+Use a `default` branch when you want a fallback:
+
+```typescript
+const rules = {
+  is_admin: 'show_admin_dashboard',
+  default: 'show_regular_dashboard',
+};
+
+const functions = {
+  default: () => true,
+  is_admin: ({ role }) => role === 'admin',
+  show_admin_dashboard: () => 'Admin dashboard',
+  show_regular_dashboard: () => 'Regular dashboard',
+};
+```
+
+If `is_admin` returns `false`, the engine continues to the next rule. Since `default` returns `true`, the fallback result is used.
 
 ## Advanced Examples
 
-1. Example with verbose output, multiple executions [Find Here](https://github.com/ayonious/nested-rules-engine/blob/master/test/multirun-verbose-example.js)
-2. Example with Creating new set of inputs while engine is executing [Find Here](https://github.com/ayonious/nested-rules-engine/blob/master/test/change-variables-example.js)
+1. [Verbose output and multiple executions](https://github.com/ayonious/nested-rules-engine/blob/master/test/multirun-verbose-example.test.ts)
+2. [Changing inputs while the engine is running](https://github.com/ayonious/nested-rules-engine/blob/master/test/change-variables-example.test.ts)
 
 ## License
 
