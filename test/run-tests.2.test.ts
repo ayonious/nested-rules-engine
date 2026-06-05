@@ -1,7 +1,7 @@
-import { executeEngine } from '../src/nested-rules-engine';
-import rules from './test2/sample.json';
-import { functions } from './test2/functions';
-import inputs from './test2/inputs.json';
+import { executeEngine } from '../src/nested-rules-engine.js';
+import rules from './test2/sample.json' with { type: 'json' };
+import { functions } from './test2/functions.js';
+import inputs from './test2/inputs.json' with { type: 'json' };
 
 describe('Test2: Simplest serial test should pass', () => {
   it(`serial traverse should work`, function () {

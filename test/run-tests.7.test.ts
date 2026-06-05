@@ -1,7 +1,7 @@
-import { executeEngine } from '../src/nested-rules-engine';
-import rules from './test7/sample.json';
-import { functions } from './test7/functions';
-import inputs from './test7/inputs.json';
+import { executeEngine } from '../src/nested-rules-engine.js';
+import rules from './test7/sample.json' with { type: 'json' };
+import { functions } from './test7/functions.js';
+import inputs from './test7/inputs.json' with { type: 'json' };
 
 describe('Test7: Very Nested test', () => {
   it(`Should pass`, function () {

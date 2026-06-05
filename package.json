@@ -9,7 +9,7 @@
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
-      "default": "./dist/index.js"
+      "import": "./dist/index.js"
     }
   },
   "scripts": {
@@ -18,7 +18,7 @@
     "format": "prettier --write \"**/*.{json,ts,tsx,yml,js,jsx}\"",
     "lint": "eslint . --ext .ts,.tsx",
     "lint:fix": "eslint . --ext .ts,.tsx --fix",
-    "test": "NODE_OPTIONS='--loader=ts-node/esm' jest --config jestconfig.json",
+    "test": "NODE_OPTIONS='--experimental-vm-modules' jest --config jestconfig.json",
     "semantic-release": "semantic-release"
   },
   "files": [

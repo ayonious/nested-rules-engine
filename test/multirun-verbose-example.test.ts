@@ -1,4 +1,4 @@
-import { executeEngine } from '../src/nested-rules-engine';
+import { executeEngine } from '../src/nested-rules-engine.js';
 
 describe('Advanced Example: Multi Execution and verbose output', () => {
   it(`is working`, function () {

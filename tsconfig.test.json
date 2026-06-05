@@ -3,6 +3,7 @@
   "compilerOptions": {
     "rootDir": ".",
     "allowSyntheticDefaultImports": true,
+    "isolatedModules": true,
     "noImplicitAny": false,
     "resolveJsonModule": true
   },

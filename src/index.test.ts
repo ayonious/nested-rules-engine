@@ -1,7 +1,7 @@
-import { executeEngine } from './index';
-import { executeEngine as originalEngine } from './nested-rules-engine';
-import { Result } from './output-formatter';
-import * as indexModule from './index';
+import { executeEngine } from './index.js';
+import { executeEngine as originalEngine } from './nested-rules-engine.js';
+import { type Result } from './output-formatter.js';
+import * as indexModule from './index.js';
 
 describe('Index Module', () => {
   describe('Named Export', () => {

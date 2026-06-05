@@ -1,7 +1,7 @@
-import { executeEngine } from '../src/nested-rules-engine';
-import rules from './test3/sample.json';
-import { functions } from './test3/functions';
-import inputs from './test3/inputs.json';
+import { executeEngine } from '../src/nested-rules-engine.js';
+import rules from './test3/sample.json' with { type: 'json' };
+import { functions } from './test3/functions.js';
+import inputs from './test3/inputs.json' with { type: 'json' };
 
 describe('Test3: Non False return functions can work', () => {
   it(`Should have output`, function () {

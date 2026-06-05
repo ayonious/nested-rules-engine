@@ -1,4 +1,5 @@
-import { createOutput, createErrorOutput } from './output-formatter';
+import { jest } from '@jest/globals';
+import { createOutput, createErrorOutput } from './output-formatter.js';
 
 describe('Output Formatter', () => {
   describe('createOutput', () => {

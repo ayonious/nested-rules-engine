@@ -1,4 +1,4 @@
-import { getAllNodesOfTree } from '../src/traverse';
+import { getAllNodesOfTree } from '../src/traverse.js';
 
 describe('Traverse', () => {
   it('should return an array with a single node for a leaf', () => {

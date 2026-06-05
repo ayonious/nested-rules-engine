@@ -1,5 +1,9 @@
-import { isGoodInputs } from './input-checker';
-import { createErrorOutput, createOutput, Result } from './output-formatter';
+import { isGoodInputs } from './input-checker.js';
+import {
+  createErrorOutput,
+  createOutput,
+  type Result,
+} from './output-formatter.js';
 
 const singleTraverse = (
   inputs: any,

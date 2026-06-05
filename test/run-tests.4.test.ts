@@ -1,7 +1,7 @@
-import { executeEngine } from '../src/nested-rules-engine';
-import rules from './test4/sample.json';
-import { functions } from './test4/functions';
-import inputs from './test4/inputs.json';
+import { executeEngine } from '../src/nested-rules-engine.js';
+import rules from './test4/sample.json' with { type: 'json' };
+import { functions } from './test4/functions.js';
+import inputs from './test4/inputs.json' with { type: 'json' };
 
 describe('Basic Checks are working', () => {
   it(`Test4: Missing Functions should be caught`, function () {
