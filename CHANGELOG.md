@@ -1,3 +1,15 @@
+# [2.0.0](https://github.com/ayonious/nested-rules-engine/compare/v1.2.7...v2.0.0) (2026-06-05)
+
+
+### Features
+
+* Support ESM only ([9a648fd](https://github.com/ayonious/nested-rules-engine/commit/9a648fd614fc6f767a6f3a0f4bc40df433ecd18d))
+
+
+### BREAKING CHANGES
+
+* remove support for commonjs
+
 ## [1.2.7](https://github.com/ayonious/nested-rules-engine/compare/v1.2.6...v1.2.7) (2026-06-04)
 
 
