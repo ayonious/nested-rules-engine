@@ -1,3 +1,15 @@
+# [3.0.0](https://github.com/ayonious/nested-rules-engine/compare/v2.0.0...v3.0.0) (2026-06-05)
+
+
+### Features
+
+* Support ESM+CJS BOTH ([5fae810](https://github.com/ayonious/nested-rules-engine/commit/5fae810a67fb48f3aebe736fa9e1283275b51405))
+
+
+### BREAKING CHANGES
+
+* Both ESM+CJS
+
 # [2.0.0](https://github.com/ayonious/nested-rules-engine/compare/v1.2.7...v2.0.0) (2026-06-05)
 
 
