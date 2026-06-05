@@ -3,22 +3,15 @@
   "version": "0.0.0",
   "repository": "github:ayonious/nested-rules-engine",
   "description": "Nested Conditional Rules Engine",
-  "type": "module",
-  "main": "./dist/index.js",
-  "types": "./dist/index.d.ts",
-  "exports": {
-    ".": {
-      "types": "./dist/index.d.ts",
-      "import": "./dist/index.js"
-    }
-  },
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "scripts": {
     "setup": "npm install",
     "build": "tsc",
     "format": "prettier --write \"**/*.{json,ts,tsx,yml,js,jsx}\"",
     "lint": "eslint . --ext .ts,.tsx",
     "lint:fix": "eslint . --ext .ts,.tsx --fix",
-    "test": "NODE_OPTIONS='--experimental-vm-modules' jest --config jestconfig.json",
+    "test": "jest --config jestconfig.json",
     "semantic-release": "semantic-release"
   },
   "files": [
