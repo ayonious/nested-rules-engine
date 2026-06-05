@@ -1,4 +1,4 @@
-import { isGoodInputs } from './input-checker.js';
+import { isGoodInputs } from './input-checker';
 import {
   createErrorOutput,
   createOutput,

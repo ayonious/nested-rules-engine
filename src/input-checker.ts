@@ -1,4 +1,4 @@
-import { getAllNodesOfTree } from './traverse.js';
+import { getAllNodesOfTree } from './traverse';
 
 export const isGoodInputs = (functions: any, tree: any) => {
   const all_elements: string[] = getAllNodesOfTree(tree);
