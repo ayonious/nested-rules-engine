@@ -71,7 +71,6 @@ jestconfig.json
 tsconfig.json
 
 # other plugins
-renovate.json
 .travis.yml
 src
 index.ts
