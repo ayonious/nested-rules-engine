@@ -25,10 +25,12 @@ jobs:
         run: yarn test --coverage
 
       - name: Upload coverage to Codecov
+        # Dependabot runs can't read secrets; coverage is uploaded after merge
+        if: github.actor != 'dependabot[bot]'
         uses: codecov/codecov-action@v7
         with:
           token: ${{ secrets.CODECOV_TOKEN }}
-          file: ./coverage/lcov.info
+          files: ./coverage/lcov.info
           flags: unittests
           name: codecov-umbrella
           fail_ci_if_error: false
