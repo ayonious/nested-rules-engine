@@ -43,7 +43,7 @@ The engine walks the tree from top to bottom. When a condition function returns 
 ## Installation
 
 ```bash
-npm install nested-rules-engine --save
+yarn add nested-rules-engine
 # or
 yarn add nested-rules-engine
 ```
